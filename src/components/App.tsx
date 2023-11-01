@@ -1,7 +1,12 @@
-import React from 'react'
+import { FC } from 'react'
+import Header from './Header/Header'
 
-const App = () => {
-	return <div></div>
+const App: FC = () => {
+	return (
+		<div>
+			<Header />
+		</div>
+	)
 }
 
 export default App
