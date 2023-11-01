@@ -1,1 +1,51 @@
 @import '../../scss/variables';
+
+.headerWrapper {
+	padding: 35px;
+	display: flex;
+	align-items: center;
+}
+.hamburger {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+.span1,
+.span2,
+.span3 {
+	position: absolute;
+	background-color: $accentBlack;
+	width: 100%;
+	height: 2px;
+}
+.span1 {
+	top: 1px;
+}
+.span2 {
+	top: 50%;
+	height: 2px;
+}
+.span3 {
+	bottom: 1px;
+}
+.span1_active,
+.span2_active,
+.span3_active {
+	position: absolute;
+	background-color: $accentBlack;
+	width: 100%;
+	height: 2px;
+	transition: $transition;
+}
+.span1_active {
+	top: 50%;
+	transform: rotate(135deg);
+}
+.span2_active {
+	display: none;
+}
+.span3_active {
+	top: 50%;
+	transform: rotate(-135deg);
+}

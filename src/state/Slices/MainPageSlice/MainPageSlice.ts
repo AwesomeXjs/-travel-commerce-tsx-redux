@@ -5,6 +5,7 @@ import {
 } from '../../../types/StateTypes/MainPageSliceTypes'
 
 const initialState: InitialStateType = {
+	menuStatus: false,
 	language: Languages.RU,
 	globalSearch: '',
 	hotels: [],
@@ -22,6 +23,9 @@ export const mainPageSlice = createSlice({
 		},
 		setGlobalSearch: (state, action: PayloadAction<string>) => {
 			state.globalSearch = action.payload
+		},
+		setMenuStatus: (state, action: PayloadAction<boolean>) => {
+			state.menuStatus = action.payload
 		},
 	},
 })

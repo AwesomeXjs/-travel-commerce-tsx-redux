@@ -5,6 +5,7 @@ export const enum Languages {
 }
 
 export interface InitialStateType {
+	menuStatus: boolean
 	language: Languages
 	globalSearch: string
 	hotels: []
