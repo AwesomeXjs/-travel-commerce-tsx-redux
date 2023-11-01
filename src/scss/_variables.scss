@@ -1,0 +1,73 @@
+$accent: #398dc0;
+$accent-light: #59a7d8;
+$accent-dark: #2c719c;
+$background-opacity: rgba(0, 0, 0, 0.7);
+$text: white;
+$special-text: rgb(145, 144, 144);
+$border: #398dc0;
+
+$regular-text: 16px;
+$small-text: 14px;
+$lineheight: 1.75;
+$userfont: 'Roboto', sans-serif;
+$transition: 0.25s ease-out;
+$index: calc(1vw + 1vh);
+$radius: 20px;
+$radius-style: 0 7px;
+
+$breakpoint_hd_plus: 1920px;
+$breakpoint_hd: 1440px;
+$breakpoint_wide: 1200px;
+$breakpoint_desktop: 992px;
+$breakpoint_tablet: 768px;
+$breakpoint_mobile: 568px;
+$breakpoint_mobile-s: 414px;
+
+@mixin hd_plus() {
+	@media screen and (max-width: $breakpoint_hd_plus) {
+		//1440px --
+		@content;
+	}
+}
+
+@mixin hd() {
+	@media screen and (max-width: $breakpoint_hd) {
+		//1440px --
+		@content;
+	}
+}
+
+@mixin wide() {
+	@media screen and (max-width: $breakpoint_wide) {
+		//1200px --
+		@content;
+	}
+}
+
+@mixin desktop() {
+	@media screen and (max-width: $breakpoint_desktop) {
+		//992px --
+		@content;
+	}
+}
+
+@mixin tablet() {
+	@media screen and (max-width: $breakpoint_tablet) {
+		//768px --
+		@content;
+	}
+}
+
+@mixin mobile() {
+	@media screen and (max-width: $breakpoint_mobile) {
+		//568px --
+		@content;
+	}
+}
+
+@mixin mobile-s() {
+	@media screen and (max-width: $breakpoint_mobile-s) {
+		//414px --
+		@content;
+	}
+}

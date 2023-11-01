@@ -1,0 +1,20 @@
+@import './_reset';
+@import './_variables';
+
+html {
+	font-size: $regular-text;
+}
+
+body {
+	font-family: $userfont;
+	line-height: $lineheight;
+	color: $text;
+	min-width: 320px;
+	position: relative;
+	background-color: #0b0a33;
+}
+
+/* .container {
+	max-width: 1400px;
+	margin: 0 auto;
+} */
