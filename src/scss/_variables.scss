@@ -1,19 +1,31 @@
-$accent: #398dc0;
-$accent-light: #59a7d8;
-$accent-dark: #2c719c;
+$accentBlue: #2569d7;
+$accentBlueLight: rgb(41, 119, 245);
+$accentBlueDark: rgb(30, 90, 187);
+
+$accentGreen: #4e9f07;
+$accentGreenLight: #5dbd09;
+$accentGreenDark: #489207;
+
+$accentBlack: #292d32;
+$accentBlackLight: #3c4249;
+$accentBlackDark: #0c0e0f;
+
+$accentYellow: rgba(242, 165, 16, 1);
+$accentYellowLight: rgb(255, 176, 19);
+$accentYellowDark: rgb(192, 132, 13);
+
 $background-opacity: rgba(0, 0, 0, 0.7);
-$text: white;
-$special-text: rgb(145, 144, 144);
-$border: #398dc0;
+$text: $accentBlack;
+$special-text: white;
+$border: $accentBlue;
 
 $regular-text: 16px;
-$small-text: 14px;
+$small-text: 13px;
 $lineheight: 1.75;
-$userfont: 'Roboto', sans-serif;
+$userfont: 'Inter', sans-serif;
 $transition: 0.25s ease-out;
 $index: calc(1vw + 1vh);
 $radius: 20px;
-$radius-style: 0 7px;
 
 $breakpoint_hd_plus: 1920px;
 $breakpoint_hd: 1440px;
