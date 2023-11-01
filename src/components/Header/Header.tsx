@@ -5,6 +5,7 @@ import {
 	setMenuStatus,
 } from '../../state/Slices/MainPageSlice/MainPageSliceData'
 import styles from './Header.module.scss'
+import Hamburger from './Hamburger/Hamburger'
 
 const Header: FC = () => {
 	const menuStatus = useAppSelector(selectMenuStatus)
@@ -13,23 +14,18 @@ const Header: FC = () => {
 		dispatch(setMenuStatus(!menuStatus))
 	}
 	return (
-		<header className={`${styles.headerWrapper} container`}>
-			<div onClick={changeMenuStatusHandler} className={styles.hamburger}>
-				<span
-					className={menuStatus ? styles.span1_active : styles.span1}
-				></span>
-				<span
-					className={menuStatus ? styles.span2_active : styles.span2}
-				></span>
-				<span
-					className={menuStatus ? styles.span3_active : styles.span3}
-				></span>
+		<header className={`container`}>
+			<div className={styles.headerWrapper}>
+				<Hamburger
+					changeMenuStatusHandler={changeMenuStatusHandler}
+					menuStatus={menuStatus}
+				/>
+				<div className={styles.langVariant}></div>
+				<div className={styles.logo}></div>
+				<div className={styles.workPhone}></div>
+				<div className={styles.globalSearch}></div>
+				<div className={styles.socialContacts}></div>
 			</div>
-			<div className={styles.langVariant}></div>
-			<div className={styles.logo}></div>
-			<div className={styles.workPhone}></div>
-			<div className={styles.globalSearch}></div>
-			<div className={styles.socialContacts}></div>
 		</header>
 	)
 }
