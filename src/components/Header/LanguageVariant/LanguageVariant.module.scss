@@ -1,0 +1,51 @@
+@import '../../../scss/variables';
+
+.langVariant {
+	position: relative;
+	border-radius: 10px;
+	border: 2px solid #d3d4d5;
+	font-weight: bold;
+	cursor: pointer;
+	transition: $transition;
+	margin-right: 40px;
+	background-color: white;
+	&:hover {
+		border: 2px solid $accentBlack;
+	}
+}
+.langiageHead {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 16px;
+}
+.languageChange {
+	position: absolute;
+	top: 110%;
+	left: 0;
+	border: 2px solid #d3d4d5;
+	border-radius: 10px;
+	transition: $transition;
+	text-align: center;
+	width: 100%;
+	background-color: white;
+	& div {
+		padding: 10px 17px;
+		transition: $transition;
+	}
+	& div:hover {
+		background-color: #d3d4d5;
+	}
+	& div:last-child {
+		border-radius: 0 0 10px 10px;
+	}
+}
+
+.languageChange.activeLanguageFrame {
+	display: block;
+}
+.languageActiveIcon {
+	transition: $transition;
+	transform: rotate(90deg);
+}

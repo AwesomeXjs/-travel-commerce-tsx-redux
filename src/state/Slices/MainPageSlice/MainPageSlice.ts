@@ -1,12 +1,10 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import {
-	Languages,
-	InitialStateType,
-} from '../../../types/StateTypes/MainPageSliceTypes'
+import { InitialStateType } from '../../../types/StateTypes/MainPageSliceTypes'
 
 const initialState: InitialStateType = {
 	menuStatus: false,
-	language: Languages.RU,
+	language: 'RU',
+	languageStatus: false,
 	globalSearch: '',
 	hotels: [],
 	sanatoriums: [],
@@ -18,8 +16,11 @@ export const mainPageSlice = createSlice({
 	name: 'mainPage',
 	initialState,
 	reducers: {
-		setLanguage: (state, action: PayloadAction<Languages>) => {
+		setLanguage: (state, action: PayloadAction<'RU' | 'EN' | 'KAZ'>) => {
 			state.language = action.payload
+		},
+		setLanguageStatus: (state, action: PayloadAction<boolean>) => {
+			state.languageStatus = action.payload
 		},
 		setGlobalSearch: (state, action: PayloadAction<string>) => {
 			state.globalSearch = action.payload
