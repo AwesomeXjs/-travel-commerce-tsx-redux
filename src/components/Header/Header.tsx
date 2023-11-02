@@ -1,25 +1,35 @@
 import { FC } from 'react'
 import { FaPhoneVolume } from 'react-icons/fa6'
-import { BsInstagram, BsTelegram, BsWhatsapp } from 'react-icons/bs'
+import { AiOutlineSearch } from 'react-icons/ai'
 
 import styles from './Header.module.scss'
 import Hamburger from './Hamburger/Hamburger'
 import LanguageVariant from './LanguageVariant/LanguageVariant'
 import logo from '../../assets/logo.png'
-
-import GlobalSearch from './GlobalSearch/GlobalSearch'
+import logoMobile from '../../assets/logoMobile.png'
+import SocialIcons from './SocialIcons/SocialIcons'
+import Menu from './Menu/Menu'
+import { useAppSelector } from '../../custom/hooks'
+import { selectMenuStatus } from '../../state/Slices/MainPageSlice/MainPageSliceData'
 
 const Header: FC = () => {
+	const menuStatus = useAppSelector(selectMenuStatus)
 	return (
-		<header className={`container`}>
-			<div className={styles.headerWrapper}>
+		<header className={styles.mainHeader}>
+			<div className={`${styles.headerWrapper} container`}>
 				<div className={styles.headerFirstSection}>
 					<Hamburger />
 					<LanguageVariant />
 					<div className={styles.logo}>
-						<a href='#'>
+						<div className={styles.logoPc}>
 							<img src={logo} alt='logo' />
-						</a>
+						</div>
+						<div className={styles.logoMobile}>
+							<img src={logoMobile} alt='logo' />
+						</div>
+					</div>
+					<div className={styles.mobileSearch}>
+						<AiOutlineSearch className={styles.mobileSearchIcon} />
 					</div>
 				</div>
 				<div className={styles.workPhone}>
@@ -33,29 +43,11 @@ const Header: FC = () => {
 						</a>
 					</div>
 				</div>
-				<div className={styles.searchContactsWrapper}>
-					<GlobalSearch />
-					<div className={styles.socialContacts}>
-						<ul className={styles.socialWrapper}>
-							<li title='Наш инстаграм!'>
-								<a href='#'>
-									<BsInstagram />
-								</a>
-							</li>
-							<li title='Наш WhatsApp!'>
-								<a href='#'>
-									<BsWhatsapp />
-								</a>
-							</li>
-							<li title='Наш телеграм!'>
-								<a href='#'>
-									<BsTelegram />
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
+				<SocialIcons />
 			</div>
+			<hr className={styles.border} />
+			{menuStatus && <Menu />}
+			yo
 		</header>
 	)
 }

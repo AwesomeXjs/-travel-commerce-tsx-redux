@@ -1,0 +1,90 @@
+@import '../../../scss/variables';
+
+.searchContactsWrapper {
+	display: flex;
+	width: 35%;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.socialWrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.socialWrapper li {
+	list-style: none;
+	transition: $transition;
+	&:hover {
+		transform: scale(0.9);
+	}
+}
+
+.socialWrapper li a {
+	position: relative;
+	padding: 10px;
+	margin: 0 5px;
+	text-align: center;
+	line-height: 63px;
+	background: #fffefe;
+	border-radius: 50%;
+	font-size: 30px;
+	color: #666;
+	transition: 0.5s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.socialWrapper li a::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: $accentBlue;
+	transition: 0.5s;
+	transform: scale(0.9);
+	z-index: -1;
+}
+
+.socialWrapper li a:hover::before {
+	transform: scale(1.1);
+	box-shadow: 0 0 15px $accentBlue;
+}
+
+.socialWrapper li a:hover {
+	color: $accentBlue;
+	box-shadow: 0 0 5px $accentBlue;
+	text-shadow: 0 0 5px $accentBlue;
+}
+
+@include hd_plus() {
+	// 1920px --
+}
+
+@include hd() {
+	//1440px --
+}
+
+@include wide() {
+	//1200px --
+	.searchContactsWrapper {
+		display: none;
+	}
+}
+
+@include desktop() {
+	// 992px--
+}
+@include tablet() {
+	// 768px--
+}
+@include mobile() {
+	// 568px--
+}
+@include mobile-s() {
+	// 414px--
+}

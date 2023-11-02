@@ -18,3 +18,74 @@ body {
 	max-width: 1840px;
 	margin: 0 auto;
 }
+
+.hoverEffectLink {
+	color: #18272f;
+	position: relative;
+	text-decoration: none;
+}
+
+.hoverEffectLink::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	border-radius: 4px;
+	background-color: #18272f;
+	bottom: -3px;
+	left: 0;
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform 0.3s ease-in-out;
+}
+
+.hoverEffectLink:hover::before {
+	transform-origin: left;
+	transform: scaleX(1);
+}
+
+@include hd_plus() {
+	// 1920px --
+}
+
+@include hd() {
+	//1440px --
+}
+
+@include wide() {
+	//1200px --
+	.modalBackground {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100vh;
+		background-color: $background-opacity;
+		cursor: pointer;
+		transform: $transition;
+		animation: backgroundAnimation 0.2s;
+	}
+}
+
+@include desktop() {
+	// 992px--
+}
+@include tablet() {
+	// 768px--
+}
+@include mobile() {
+	// 568px--
+}
+@include mobile-s() {
+	// 414px--
+}
+
+@keyframes backgroundAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

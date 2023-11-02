@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react'
+import { ChangeEvent, FC } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../custom/hooks'
 import {
 	selectGlobalSearch,
@@ -7,7 +7,7 @@ import {
 import styles from './GlobalSearch.module.scss'
 import { AiOutlineSearch } from 'react-icons/ai'
 
-const GlobalSearch = () => {
+const GlobalSearch: FC = () => {
 	const searchValue = useAppSelector(selectGlobalSearch)
 	const dispatch = useAppDispatch()
 	const changeSearchValueHandler = (e: ChangeEvent<HTMLInputElement>) => {

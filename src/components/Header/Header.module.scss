@@ -4,13 +4,18 @@
 	padding: 25px;
 	display: flex;
 	justify-content: space-between;
+	position: sticky;
+	z-index: 5;
+	background-color: #fff;
 }
+
 .logo {
 	max-width: 220px;
 }
 .headerFirstSection {
 	display: flex;
 	align-items: center;
+	position: relative;
 }
 .workPhone {
 	display: flex;
@@ -27,11 +32,11 @@
 	}
 }
 .phoneIcon {
-	font-size: 25px;
+	font-size: 15px;
 	color: $accentBlue;
 	border: 1px solid $accentBlue;
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -122,4 +127,79 @@
 	color: $accentBlue;
 	box-shadow: 0 0 5px $accentBlue;
 	text-shadow: 0 0 5px $accentBlue;
+}
+
+.mobileSearchIcon {
+	font-size: 30px;
+	cursor: pointer;
+	transition: $transition;
+	display: none;
+	&:active {
+		transform: scale(0.8);
+	}
+}
+.logoMobile {
+	max-width: 170px;
+	display: none;
+}
+.logoPc {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.border {
+	border-top: 2px solid #ccc;
+}
+
+@include hd_plus() {
+	// 1920px --
+}
+
+@include hd() {
+	//1440px --
+	.logo {
+		max-width: 165px;
+	}
+}
+
+@include wide() {
+	//1200px --
+	.searchContactsWrapper {
+		display: none;
+	}
+	.workPhone {
+		display: none;
+	}
+	.headerFirstSection {
+		width: 100%;
+		justify-content: space-between;
+	}
+	.mobileSearchIcon {
+		display: block;
+	}
+	.logoMobile {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+	.logoPc {
+		display: none;
+	}
+	.headerWrapper {
+		padding: 10px 15px;
+	}
+}
+
+@include desktop() {
+	// 992px--
+}
+@include tablet() {
+	// 768px--
+}
+@include mobile() {
+	// 568px--
+}
+@include mobile-s() {
+	// 414px--
 }
