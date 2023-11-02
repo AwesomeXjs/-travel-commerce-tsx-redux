@@ -1,0 +1,38 @@
+@import '../../../scss/variables';
+
+.globalSearch {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	border-radius: $radius;
+	background-color: #fafafa;
+	max-width: 410px;
+	width: 100%;
+	border: 3px solid #e9e8e8;
+	margin-right: 30px;
+}
+.statickSearchLogo,
+.searchActive {
+	font-size: 30px;
+}
+.statickSearchLogo {
+	color: $accentBlue;
+}
+.searchActive {
+	cursor: pointer;
+	transition: $transition;
+	color: rgba(58, 57, 57, 0.61);
+	&:hover {
+		color: $accentBlack;
+	}
+}
+.searchInput {
+	border: none;
+	width: 100%;
+	padding: 20px;
+	background-color: #fafafa;
+	&::placeholder {
+		font-family: $userfont;
+	}
+}

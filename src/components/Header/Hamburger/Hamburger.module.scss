@@ -13,15 +13,15 @@
 	position: absolute;
 	background-color: $accentBlack;
 	width: 100%;
-	height: 2px;
+	height: 1px;
 	transition: $transition;
 }
 .span1 {
-	top: 1px;
+	top: 2px;
 }
 .span2 {
 	top: 50%;
-	height: 2px;
+	height: 1px;
 }
 .span3 {
 	bottom: 1px;
@@ -32,7 +32,7 @@
 	position: absolute;
 	background-color: $accentBlack;
 	width: 100%;
-	height: 2px;
+	height: 1px;
 	transition: $transition;
 }
 .span1_active {
