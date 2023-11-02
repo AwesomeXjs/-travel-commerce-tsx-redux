@@ -3,8 +3,9 @@ export interface InitialStateType {
 	language: 'RU' | 'EN' | 'KAZ'
 	languageStatus: boolean
 	globalSearch: string
-	hotels: []
+	/* 	hotels: []
 	sanatoriums: []
 	camps: []
 	hotSprings: []
+	tours: [] */
 }

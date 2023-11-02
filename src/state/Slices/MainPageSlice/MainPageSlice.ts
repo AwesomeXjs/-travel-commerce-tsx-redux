@@ -6,10 +6,11 @@ const initialState: InitialStateType = {
 	language: 'RU',
 	languageStatus: false,
 	globalSearch: '',
-	hotels: [],
+	/* 	hotels: [],
 	sanatoriums: [],
 	camps: [],
 	hotSprings: [],
+	tours: [], */
 }
 
 export const mainPageSlice = createSlice({
