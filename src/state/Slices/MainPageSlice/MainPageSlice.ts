@@ -13,6 +13,7 @@ const initialState: InitialStateType = {
 	where: '',
 	when: [],
 	who: null,
+	date: 'Любые даты',
 }
 
 export const mainPageSlice = createSlice({
@@ -42,6 +43,9 @@ export const mainPageSlice = createSlice({
 		) => {
 			state.dataStatus = action.payload
 		},
+		setDateCalendar: (state, action: PayloadAction<string[]>) => {
+			state.date = action.payload
+		},
 	},
 })
 
@@ -60,6 +64,7 @@ export const selectDataStatus = (state: RootType) => state.mainPage.dataStatus
 export const selectWhere = (state: RootType) => state.mainPage.where
 export const selectWhen = (state: RootType) => state.mainPage.when
 export const selectWho = (state: RootType) => state.mainPage.who
+export const selectDate = (state: RootType) => state.mainPage.date
 
 //actions
 export const {
@@ -69,4 +74,5 @@ export const {
 	setLanguageStatus,
 	setPhoneForApplication,
 	setDataStatus,
+	setDateCalendar,
 } = mainPageSlice.actions

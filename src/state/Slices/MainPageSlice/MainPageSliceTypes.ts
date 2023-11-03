@@ -8,6 +8,7 @@ export interface InitialStateType {
 	where: string
 	when: number[] | string
 	who: number | null
+	date: string[] | string
 	/* 	hotels: []
 	sanatoriums: []
 	camps: []

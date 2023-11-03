@@ -17,6 +17,7 @@ import {
 } from '../../../../state/Slices/MainPageSlice/MainPageSlice'
 import { PiMapPinLine } from 'react-icons/pi'
 import { AiOutlineUser } from 'react-icons/ai'
+import CalendarPicker from './CalendarPicker/CalendarPicker'
 
 const BannerMainPageWithSearch: FC = () => {
 	const dataStatus = useAppSelector(selectDataStatus)
@@ -92,12 +93,20 @@ const BannerMainPageWithSearch: FC = () => {
 							<div className={styles.mainWhere}>
 								<PiMapPinLine className={styles.icon} />
 								<div className={styles.whereContent}>
-									<h5>Куда?</h5>
+									<span>Куда?</span>
+									<input
+										placeholder='Весь Казахстан'
+										className={styles.inputWhere}
+										type='text'
+									/>
 								</div>
 							</div>
 							<div className={styles.mainWhen}>
 								<LuCalendarSearch className={styles.icon} />
-								<div className={styles.whenContent}></div>
+								<div className={styles.whenContent}>
+									<span>Когда?</span>
+									<CalendarPicker />
+								</div>
 							</div>
 							<div className={styles.mainWho}>
 								<AiOutlineUser className={styles.icon} />

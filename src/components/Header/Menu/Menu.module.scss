@@ -6,7 +6,6 @@
 	transform: translateY(-100%);
 	transition: $transition;
 	background-color: #fff;
-	z-index: 3;
 }
 .headerMenuWrapper.activeMenu {
 	transform: translateY(0%);
@@ -26,6 +25,7 @@
 	font-size: $regular-text;
 	display: flex;
 	flex-wrap: wrap;
+
 	& li {
 		width: 30%;
 		margin-bottom: 5px;

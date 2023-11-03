@@ -3,7 +3,6 @@
 .mainBannerWrapper {
 	position: relative;
 	min-height: 605px;
-	overflow: hidden;
 }
 .mainBannerImageWrapper {
 	position: absolute;
@@ -22,10 +21,9 @@
 	display: flex;
 	top: 0;
 	bottom: 40%;
-	left: 5%;
-	right: 0;
-	justify-content: center;
-	align-items: center;
+	left: 29%;
+
+	height: 50%;
 }
 .mainFilterWrapper {
 	position: absolute;
@@ -38,7 +36,7 @@
 	color: $special-text;
 }
 .categories {
-	margin-bottom: 23px;
+	margin-bottom: 10px;
 	display: flex;
 	& div:last-child {
 		margin-right: 0;
@@ -88,6 +86,9 @@
 	&:hover {
 		color: $special-text;
 	}
+	&:active {
+		transform: scale(0.9);
+	}
 	& span {
 		margin-left: 6px;
 	}
@@ -117,10 +118,23 @@
 .whereContent,
 .whenContent,
 .whoContent {
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
+	margin-left: 12px;
 }
 .icon {
 	color: $accentGreen;
+}
+
+.whereContent h5 {
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.1;
+}
+.inputWhere {
+	font-size: 16px;
+	border: none;
+	font-family: $userfont;
 }
