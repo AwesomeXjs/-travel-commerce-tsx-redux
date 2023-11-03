@@ -9,6 +9,10 @@ const initialState: InitialStateType = {
 	languageStatus: false,
 	globalSearch: '',
 	phoneForApplication: '',
+	dataStatus: 'hotels',
+	where: '',
+	when: [],
+	who: null,
 }
 
 export const mainPageSlice = createSlice({
@@ -30,6 +34,14 @@ export const mainPageSlice = createSlice({
 		setPhoneForApplication: (state, action: PayloadAction<any>) => {
 			state.phoneForApplication = action.payload
 		},
+		setDataStatus: (
+			state,
+			action: PayloadAction<
+				'hotels' | 'camps' | 'hotSprings' | 'sanatoriums' | 'fewDays'
+			>
+		) => {
+			state.dataStatus = action.payload
+		},
 	},
 })
 
@@ -44,6 +56,10 @@ export const selectGlobalSearch = (state: RootType) =>
 	state.mainPage.globalSearch
 export const selectPhoneForApplication = (state: RootType) =>
 	state.mainPage.phoneForApplication
+export const selectDataStatus = (state: RootType) => state.mainPage.dataStatus
+export const selectWhere = (state: RootType) => state.mainPage.where
+export const selectWhen = (state: RootType) => state.mainPage.when
+export const selectWho = (state: RootType) => state.mainPage.who
 
 //actions
 export const {
@@ -52,4 +68,5 @@ export const {
 	setMenuStatus,
 	setLanguageStatus,
 	setPhoneForApplication,
+	setDataStatus,
 } = mainPageSlice.actions

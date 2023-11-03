@@ -2,6 +2,7 @@
 
 .wrapper {
 	background-color: $accentBlue;
+	z-index: 2;
 }
 .content {
 	padding: 10px 25px;
@@ -16,6 +17,7 @@
 .leftSection {
 	display: flex;
 	align-items: center;
+	z-index: 2;
 	& h1 {
 		font-size: 28px;
 		color: $special-text;
@@ -32,6 +34,7 @@
 	font-size: 20px;
 	max-width: 230px;
 	margin-right: 26px;
+	z-index: 2;
 }
 
 .formWrapper {
@@ -48,6 +51,7 @@
 	border-radius: 10px;
 	cursor: pointer;
 	transition: $transition;
+	z-index: 2;
 	&:hover {
 		background-color: $accentYellowLight;
 	}

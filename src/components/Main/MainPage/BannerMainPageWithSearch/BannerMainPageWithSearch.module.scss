@@ -1,0 +1,126 @@
+@import '../../../../scss/variables';
+
+.mainBannerWrapper {
+	position: relative;
+	min-height: 605px;
+	overflow: hidden;
+}
+.mainBannerImageWrapper {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: url('https://www.free-wallpapers.su/data/media/21/big/pri2931.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.mainLogoBackWrapper {
+	position: absolute;
+	display: flex;
+	top: 0;
+	bottom: 40%;
+	left: 5%;
+	right: 0;
+	justify-content: center;
+	align-items: center;
+}
+.mainFilterWrapper {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	color: $special-text;
+}
+.categories {
+	margin-bottom: 23px;
+	display: flex;
+	& div:last-child {
+		margin-right: 0;
+	}
+}
+.hotels,
+.sanatoriums,
+.fewDays,
+.camps,
+.hotStrings {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+	padding: 10px 26px;
+	background-color: white;
+	margin-right: 10px;
+	border-radius: $radius;
+	font-size: 20px;
+	color: $accentGreen;
+	overflow: hidden;
+	position: relative;
+	text-decoration: none;
+	transition: 0.2s transform ease-in-out;
+	will-change: transform;
+	z-index: 0;
+	&::after {
+		background-color: $accentGreen;
+		border-radius: $radius;
+		content: '';
+		display: block;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transform: translate(-100%, 0) rotate(10deg);
+		transform-origin: top left;
+		transition: 0.2s transform ease-out;
+		will-change: transform;
+		z-index: -1;
+	}
+	&:hover::after {
+		transform: translate(0, 0);
+	}
+
+	&:hover {
+		color: $special-text;
+	}
+	& span {
+		margin-left: 6px;
+	}
+}
+.active {
+	background-color: $accentGreen;
+	color: $special-text;
+}
+.mainWhere,
+.mainWhen,
+.mainWho {
+	display: flex;
+	align-items: center;
+}
+.searchContent {
+	width: 100%;
+	background-color: white;
+	display: flex;
+	color: black;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px;
+	border-radius: 32px;
+	padding-left: 25px;
+	font-size: 20px;
+}
+.whereContent,
+.whenContent,
+.whoContent {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.icon {
+	color: $accentGreen;
+}
