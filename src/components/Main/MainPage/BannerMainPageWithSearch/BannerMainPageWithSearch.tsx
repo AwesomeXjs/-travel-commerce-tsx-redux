@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, MouseEvent } from 'react'
 import {
 	RiAlarmLine,
 	RiHeartPulseFill,
@@ -13,16 +13,22 @@ import styles from './BannerMainPageWithSearch.module.scss'
 import { useAppDispatch, useAppSelector } from '../../../../custom/hooks'
 import {
 	selectDataStatus,
+	selectWho,
 	setDataStatus,
 } from '../../../../state/Slices/MainPageSlice/MainPageSlice'
 import { PiMapPinLine } from 'react-icons/pi'
 import { AiOutlineUser } from 'react-icons/ai'
 import CalendarPicker from './CalendarPicker/CalendarPicker'
+import CustomButton from '../../../../custom/UI/CustomButton/CustomButton'
 
 const BannerMainPageWithSearch: FC = () => {
 	const dataStatus = useAppSelector(selectDataStatus)
+	const dataWho = useAppSelector(selectWho)
 	const dispatch = useAppDispatch()
 
+	const searchSubmitHandler = (event: MouseEvent<HTMLButtonElement>) => {
+		event.preventDefault()
+	}
 	return (
 		<>
 			<div className={styles.mainBannerWrapper}>
@@ -110,9 +116,20 @@ const BannerMainPageWithSearch: FC = () => {
 							</div>
 							<div className={styles.mainWho}>
 								<AiOutlineUser className={styles.icon} />
-								<div className={styles.whoContent}></div>
+								<div className={styles.whoContent}>
+									<span>Кто?</span>
+									<div>{dataWho} взр</div>
+									<div className={styles.whoChanger}></div>
+								</div>
 							</div>
-							<button type='submit'></button>
+							<CustomButton
+								onClick={searchSubmitHandler}
+								style={{ maxWidth: '120px', borderRadius: '32px' }}
+								variant='orange'
+								type='submit'
+							>
+								Найти
+							</CustomButton>
 						</form>
 					</div>
 				</div>

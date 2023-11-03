@@ -2,5 +2,119 @@
 
 .custonButtonStyle {
 	width: 100%;
-	min-width: none;
+	font-size: 20px;
+	font-family: $userfont;
+	overflow: hidden;
+	position: relative;
+	transition: 0.2s transform ease-in-out;
+	will-change: transform;
+	z-index: 0;
+	padding: 12px 0;
+	cursor: pointer;
+	border-radius: $radius;
+	&::after {
+		content: '';
+		display: block;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transform: translate(-100%, 0) rotate(10deg);
+		transform-origin: top left;
+		transition: 0.2s transform ease-out;
+		will-change: transform;
+		z-index: -1;
+	}
+	&:hover::after {
+		transform: translate(0, 0);
+	}
+	&:hover {
+		will-change: transform;
+	}
+}
+
+.variantGreen {
+	color: white;
+	background-color: $accentGreen;
+	border: 2px solid $accentGreen;
+	&::after {
+		background-color: white;
+	}
+	&:hover {
+		color: $accentGreen;
+	}
+}
+.backWhiteBorderGreen {
+	color: $accentGreen;
+	background-color: white;
+	border: 2px solid $accentGreen;
+	&::after {
+		background-color: $accentGreen;
+	}
+	&:hover {
+		color: white;
+	}
+}
+.variantOrange {
+	color: white;
+	background-color: $accentYellow;
+	border: 2px solid $accentYellow;
+	&::after {
+		background-color: white;
+	}
+	&:hover {
+		color: $accentYellow;
+	}
+}
+.backWhiteBorderBlue {
+	color: $accentBlue;
+	background-color: white;
+	border: 2px solid $accentBlue;
+	&::after {
+		background-color: $accentBlue;
+	}
+	&:hover {
+		color: white;
+	}
+}
+.accentBlueButton {
+	color: white;
+	background-color: $accentBlue;
+	border: 2px solid $accentBlue;
+	&::after {
+		background-color: white;
+	}
+	&:hover {
+		color: $accentBlue;
+	}
+}
+
+@include hd_plus() {
+	// 1920px --
+}
+
+@include hd() {
+	//1440px --
+	.custonButtonStyle {
+		width: 100%;
+		font-size: 16px;
+	}
+}
+
+@include wide() {
+	//1200px --
+}
+
+@include desktop() {
+	// 992px--
+}
+@include tablet() {
+	// 768px--
+}
+@include mobile() {
+	// 568px--
+}
+@include mobile-s() {
+	// 414px--
 }

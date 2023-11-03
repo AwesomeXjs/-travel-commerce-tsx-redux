@@ -7,7 +7,9 @@ export interface InitialStateType {
 	dataStatus: 'hotels' | 'camps' | 'hotSprings' | 'sanatoriums' | 'fewDays'
 	where: string
 	when: number[] | string
-	who: number | null
+	who: number
+	whoChildren: number
+	whoWindowOpen: boolean
 	date: string[] | string
 	/* 	hotels: []
 	sanatoriums: []

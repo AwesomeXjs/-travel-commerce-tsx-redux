@@ -29,7 +29,7 @@
 }
 .buttonCalendar,
 .randomButtonCalendar {
-	width: 70%;
+	width: 100%;
 	padding: 12px 0;
 	border-radius: $radius;
 	cursor: pointer;
@@ -39,7 +39,12 @@
 	border: none;
 	font-size: 16px;
 	cursor: pointer;
+	font-weight: bold;
 }
 .whenContent span {
 	font-size: 15px;
+}
+.buttonsWrapper {
+	padding: 0 0 20px 0;
+	width: 80%;
 }

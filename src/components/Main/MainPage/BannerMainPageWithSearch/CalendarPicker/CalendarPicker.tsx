@@ -11,6 +11,7 @@ import {
 	selectDate,
 	setDateCalendar,
 } from '../../../../../state/Slices/MainPageSlice/MainPageSlice'
+import CustomButton from '../../../../../custom/UI/CustomButton/CustomButton'
 
 const CalendarPicker: FC = () => {
 	const [range, setRange] = useState([
@@ -32,6 +33,10 @@ const CalendarPicker: FC = () => {
 				`${format(range[0].endDate, 'MM.dd.yyy')}`,
 			])
 		)
+	}
+	const addRandomDatesHandler = (event: MouseEvent<HTMLButtonElement>) => {
+		event.preventDefault()
+		dispatch(setDateCalendar('Любые даты'))
 	}
 
 	const [openCalendar, setOpenCalendar] = useState<boolean>(false)
@@ -82,18 +87,22 @@ const CalendarPicker: FC = () => {
 							//@ts-ignore
 							onChange={item => setRange([item.selection])}
 						/>
-						<button
-							onClick={addCalendarDateHandler}
-							className={styles.randomButtonCalendar}
-						>
-							Любые даты
-						</button>
-						<button
-							onClick={addCalendarDateHandler}
-							className={styles.buttonCalendar}
-						>
-							Выбрать эти даты
-						</button>
+						<div className={styles.buttonsWrapper}>
+							<CustomButton
+								style={{ marginBottom: '15px', fontSize: '14px' }}
+								variant='backWhiteBorderGreen'
+								onClick={addRandomDatesHandler}
+							>
+								Любые даты
+							</CustomButton>
+							<CustomButton
+								style={{ fontSize: '14px' }}
+								variant='green'
+								onClick={addCalendarDateHandler}
+							>
+								Выбрать эти даты
+							</CustomButton>
+						</div>
 					</>
 				)}
 			</div>

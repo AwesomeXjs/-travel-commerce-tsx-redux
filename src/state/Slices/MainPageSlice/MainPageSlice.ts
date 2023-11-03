@@ -12,7 +12,9 @@ const initialState: InitialStateType = {
 	dataStatus: 'hotels',
 	where: '',
 	when: [],
-	who: null,
+	who: 2,
+	whoChildren: 0,
+	whoWindowOpen: false,
 	date: 'Любые даты',
 }
 
@@ -43,8 +45,17 @@ export const mainPageSlice = createSlice({
 		) => {
 			state.dataStatus = action.payload
 		},
-		setDateCalendar: (state, action: PayloadAction<string[]>) => {
+		setDateCalendar: (state, action: PayloadAction<string[] | string>) => {
 			state.date = action.payload
+		},
+		setWho: (state, action: PayloadAction<number>) => {
+			state.who = action.payload
+		},
+		setWhoChildren: (state, action: PayloadAction<number>) => {
+			state.whoChildren = action.payload
+		},
+		setWhoWindowOpen: (state, action: PayloadAction<boolean>) => {
+			state.whoWindowOpen = action.payload
 		},
 	},
 })
@@ -64,6 +75,9 @@ export const selectDataStatus = (state: RootType) => state.mainPage.dataStatus
 export const selectWhere = (state: RootType) => state.mainPage.where
 export const selectWhen = (state: RootType) => state.mainPage.when
 export const selectWho = (state: RootType) => state.mainPage.who
+export const selectWhoChildren = (state: RootType) => state.mainPage.whoChildren
+export const selectWhoWindowOpen = (state: RootType) =>
+	state.mainPage.whoWindowOpen
 export const selectDate = (state: RootType) => state.mainPage.date
 
 //actions
@@ -75,4 +89,7 @@ export const {
 	setPhoneForApplication,
 	setDataStatus,
 	setDateCalendar,
+	setWhoChildren,
+	setWho,
+	setWhoWindowOpen,
 } = mainPageSlice.actions
