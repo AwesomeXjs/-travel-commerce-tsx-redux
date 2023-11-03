@@ -1,29 +1,18 @@
-import { FC, useRef } from 'react'
+import { FC } from 'react'
 import { GrFormNext } from 'react-icons/gr'
-import { useAppDispatch, useAppSelector } from '../../../custom/hooks'
-import {
-	selectLanguage,
-	selectLanguageStatus,
-	setLanguage,
-	setLanguageStatus,
-} from '../../../state/Slices/MainPageSlice/MainPageSliceData'
+
+import { setLanguage } from '../../../state/Slices/MainPageSlice/MainPageSliceData'
 import styles from './LanguageVariant.module.scss'
+import { useAppDispatch } from '../../../custom/hooks'
+import { LanguageVariantProps } from './LanguageVariantTypes'
 
-const LanguageVariant: FC = () => {
-	const languageStatus = useAppSelector(selectLanguageStatus)
-	const language = useAppSelector(selectLanguage)
+const LanguageVariant: FC<LanguageVariantProps> = ({
+	refOne,
+	changeLanguageStatusHandler,
+	language,
+	languageStatus,
+}) => {
 	const dispatch = useAppDispatch()
-	const changeLanguageStatusHandler = () => {
-		dispatch(setLanguageStatus(!languageStatus))
-	}
-	const refOne = useRef<HTMLDivElement>(null)
-	const hideLanguageWindowOnClick = (e: any) => {
-		if (refOne.current && !refOne.current.contains(e.target)) {
-			dispatch(setLanguageStatus(false))
-		}
-	}
-	document.addEventListener('click', hideLanguageWindowOnClick, true)
-
 	return (
 		<div ref={refOne} className={styles.langVariant}>
 			<div

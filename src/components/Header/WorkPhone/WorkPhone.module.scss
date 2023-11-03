@@ -1,0 +1,81 @@
+@import '../../../scss/variables';
+
+.workPhone {
+	display: flex;
+	align-items: center;
+}
+.contactContent {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.3;
+	text-align: center;
+	& a {
+		font-weight: bold;
+		color: $accentBlue;
+	}
+}
+.phoneIcon {
+	font-size: 15px;
+	color: $accentBlue;
+	border: 1px solid $accentBlue;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	margin-right: 21px;
+}
+
+.contactLink {
+	color: #18272f;
+	position: relative;
+	text-decoration: none;
+}
+
+.contactLink::before {
+	content: '';
+	position: absolute;
+	width: 80%;
+	height: 2px;
+	border-radius: 4px;
+	background-color: $accentBlue;
+	bottom: 0;
+
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform 0.3s ease-in-out;
+}
+
+.contactLink:hover::before {
+	transform-origin: left;
+	transform: scaleX(1);
+}
+
+@include hd_plus() {
+	// 1920px --
+}
+
+@include hd() {
+	//1440px --
+}
+
+@include wide() {
+	//1200px --
+	.workPhone {
+		display: none;
+	}
+}
+
+@include desktop() {
+	// 992px--
+}
+@include tablet() {
+	// 768px--
+}
+@include mobile() {
+	// 568px--
+}
+@include mobile-s() {
+	// 414px--
+}

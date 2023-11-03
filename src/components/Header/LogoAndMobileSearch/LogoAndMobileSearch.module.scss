@@ -1,0 +1,62 @@
+@import '../../../scss/variables';
+
+.mobileSearchIcon {
+	font-size: 30px;
+	cursor: pointer;
+	transition: $transition;
+	display: none;
+	&:active {
+		transform: scale(0.8);
+	}
+}
+.logo {
+	max-width: 220px;
+}
+.logoMobile {
+	max-width: 170px;
+	display: none;
+}
+.logoPc {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+@include hd_plus() {
+	// 1920px --
+}
+
+@include hd() {
+	//1440px --
+	.logo {
+		max-width: 165px;
+	}
+}
+
+@include wide() {
+	//1200px --
+	.mobileSearchIcon {
+		display: block;
+	}
+	.logoMobile {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+	.logoPc {
+		display: none;
+	}
+}
+
+@include desktop() {
+	// 992px--
+}
+@include tablet() {
+	// 768px--
+}
+@include mobile() {
+	// 568px--
+}
+@include mobile-s() {
+	// 414px--
+}

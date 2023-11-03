@@ -2,11 +2,12 @@ import { FC } from 'react'
 import { BsInstagram, BsTelegram, BsWhatsapp } from 'react-icons/bs'
 import styles from './SocialIcons.module.scss'
 import GlobalSearch from '../GlobalSearch/GlobalSearch'
+import { SocialIconsAndSearchProps } from './SocialIconsTypes'
 
-const SocialIcons: FC = () => {
+const SocialIconsAndSearch: FC<SocialIconsAndSearchProps> = props => {
 	return (
 		<div className={styles.searchContactsWrapper}>
-			<GlobalSearch />
+			<GlobalSearch {...props} />
 			<div className={styles.socialContacts}>
 				<ul className={styles.socialWrapper}>
 					<li title='Наш инстаграм!'>
@@ -30,4 +31,4 @@ const SocialIcons: FC = () => {
 	)
 }
 
-export default SocialIcons
+export default SocialIconsAndSearch

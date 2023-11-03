@@ -1,18 +1,12 @@
-import { ChangeEvent, FC } from 'react'
-import { useAppDispatch, useAppSelector } from '../../../custom/hooks'
-import {
-	selectGlobalSearch,
-	setGlobalSearch,
-} from '../../../state/Slices/MainPageSlice/MainPageSliceData'
+import { FC } from 'react'
 import styles from './GlobalSearch.module.scss'
 import { AiOutlineSearch } from 'react-icons/ai'
+import { GlobalSearchProps } from './GlobalSearchTypes'
 
-const GlobalSearch: FC = () => {
-	const searchValue = useAppSelector(selectGlobalSearch)
-	const dispatch = useAppDispatch()
-	const changeSearchValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
-		dispatch(setGlobalSearch(e.target.value))
-	}
+const GlobalSearch: FC<GlobalSearchProps> = ({
+	changeSearchValueHandler,
+	searchValue,
+}) => {
 	return (
 		<div className={styles.globalSearch}>
 			<AiOutlineSearch className={styles.statickSearchLogo} />
