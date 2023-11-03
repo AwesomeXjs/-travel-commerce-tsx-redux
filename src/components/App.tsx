@@ -4,7 +4,8 @@ import { useAppDispatch, useAppSelector } from '../custom/hooks'
 import {
 	selectMenuStatus,
 	setMenuStatus,
-} from '../state/Slices/MainPageSlice/MainPageSliceData'
+} from '../state/Slices/MainPageSlice/MainPageSlice'
+import Main from './Main/Main'
 
 const App: FC = () => {
 	const dispatch = useAppDispatch()
@@ -15,6 +16,7 @@ const App: FC = () => {
 	return (
 		<div>
 			<Header />
+			<Main />
 			{menuStatus && (
 				<div
 					onClick={changeMenuStatusHandler}

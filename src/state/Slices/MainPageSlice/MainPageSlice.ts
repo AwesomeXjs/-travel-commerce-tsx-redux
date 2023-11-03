@@ -1,16 +1,14 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { InitialStateType } from '../../../types/StateTypes/MainPageSliceTypes'
+
+import { RootType } from '../../store'
+import { InitialStateType } from './MainPageSliceTypes'
 
 const initialState: InitialStateType = {
 	menuStatus: false,
 	language: 'RU',
 	languageStatus: false,
 	globalSearch: '',
-	/* 	hotels: [],
-	sanatoriums: [],
-	camps: [],
-	hotSprings: [],
-	tours: [], */
+	phoneForApplication: '',
 }
 
 export const mainPageSlice = createSlice({
@@ -29,7 +27,29 @@ export const mainPageSlice = createSlice({
 		setMenuStatus: (state, action: PayloadAction<boolean>) => {
 			state.menuStatus = action.payload
 		},
+		setPhoneForApplication: (state, action: PayloadAction<any>) => {
+			state.phoneForApplication = action.payload
+		},
 	},
 })
 
 export default mainPageSlice.reducer
+
+//selectors
+export const selectMenuStatus = (state: RootType) => state.mainPage.menuStatus
+export const selectLanguage = (state: RootType) => state.mainPage.language
+export const selectLanguageStatus = (state: RootType) =>
+	state.mainPage.languageStatus
+export const selectGlobalSearch = (state: RootType) =>
+	state.mainPage.globalSearch
+export const selectPhoneForApplication = (state: RootType) =>
+	state.mainPage.phoneForApplication
+
+//actions
+export const {
+	setLanguage,
+	setGlobalSearch,
+	setMenuStatus,
+	setLanguageStatus,
+	setPhoneForApplication,
+} = mainPageSlice.actions

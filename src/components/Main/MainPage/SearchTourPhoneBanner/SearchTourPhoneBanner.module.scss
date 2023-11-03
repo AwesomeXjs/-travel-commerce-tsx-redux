@@ -1,0 +1,98 @@
+@import '../../../../scss/variables';
+
+.wrapper {
+	background-color: $accentBlue;
+}
+.content {
+	padding: 10px 25px;
+	display: flex;
+	text-align: center;
+	justify-content: space-between;
+	& img {
+		max-width: 52px;
+		margin-right: 40px;
+	}
+}
+.leftSection {
+	display: flex;
+	align-items: center;
+	& h1 {
+		font-size: 28px;
+		color: $special-text;
+	}
+}
+
+.phoneInput {
+	font-weight: bold;
+	font-family: $userfont;
+	padding: 15px 20px;
+	border-radius: 10px;
+	border: none;
+	text-align: center;
+	font-size: 20px;
+	max-width: 230px;
+	margin-right: 26px;
+}
+
+.formWrapper {
+	display: flex;
+}
+
+.buttonWrapper {
+	background-color: $accentYellow;
+	min-width: 200px;
+	color: $special-text;
+	font-family: $userfont;
+	font-weight: medium;
+	font-size: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: $transition;
+	&:hover {
+		background-color: $accentYellowLight;
+	}
+	&:active {
+		transform: scale(0.9);
+	}
+}
+
+@include hd_plus() {
+	// 1920px --
+}
+
+@include hd() {
+	//1440px --
+	.leftSection {
+		& h1 {
+			font-size: 22px;
+		}
+	}
+	.phoneInput {
+		font-size: 16px;
+		padding: 12px 26px;
+	}
+	.buttonWrapper {
+		font-size: 16px;
+		min-width: 155px;
+	}
+}
+
+@include wide() {
+	//1200px --
+	.wrapper {
+		display: none;
+	}
+}
+
+@include desktop() {
+	// 992px--
+}
+@include tablet() {
+	// 768px--
+}
+@include mobile() {
+	// 568px--
+}
+@include mobile-s() {
+	// 414px--
+}

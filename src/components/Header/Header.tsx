@@ -6,6 +6,8 @@ import LanguageVariant from './LanguageVariant/LanguageVariant'
 import SocialIconsAndSearch from './SocialIcons/SocialIcons'
 import Menu from './Menu/Menu'
 import { useAppDispatch, useAppSelector } from '../../custom/hooks'
+
+import LogoAndMobileSearch from './LogoAndMobileSearch/LogoAndMobileSearch'
 import {
 	selectGlobalSearch,
 	selectLanguage,
@@ -14,8 +16,8 @@ import {
 	setGlobalSearch,
 	setLanguageStatus,
 	setMenuStatus,
-} from '../../state/Slices/MainPageSlice/MainPageSliceData'
-import LogoAndMobileSearch from './LogoAndMobileSearch/LogoAndMobileSearch'
+} from '../../state/Slices/MainPageSlice/MainPageSlice'
+import WorkPhone from './WorkPhone/WorkPhone'
 
 const Header: FC = () => {
 	//selectors
@@ -62,8 +64,10 @@ const Header: FC = () => {
 						refOne={refOne}
 						changeLanguageStatusHandler={changeLanguageStatusHandler}
 					/>
+
 					<LogoAndMobileSearch />
 				</div>
+				<WorkPhone />
 				<SocialIconsAndSearch
 					changeSearchValueHandler={changeSearchValueHandler}
 					searchValue={searchValue}

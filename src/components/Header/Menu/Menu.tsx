@@ -1,6 +1,6 @@
 import styles from './Menu.module.scss'
 import { useAppSelector } from '../../../custom/hooks'
-import { selectMenuStatus } from '../../../state/Slices/MainPageSlice/MainPageSliceData'
+import { selectMenuStatus } from '../../../state/Slices/MainPageSlice/MainPageSlice'
 
 const Menu = () => {
 	const menuStatus = useAppSelector(selectMenuStatus)

@@ -1,10 +1,10 @@
 import { FC } from 'react'
 import { GrFormNext } from 'react-icons/gr'
 
-import { setLanguage } from '../../../state/Slices/MainPageSlice/MainPageSliceData'
 import styles from './LanguageVariant.module.scss'
 import { useAppDispatch } from '../../../custom/hooks'
 import { LanguageVariantProps } from './LanguageVariantTypes'
+import { setLanguage } from '../../../state/Slices/MainPageSlice/MainPageSlice'
 
 const LanguageVariant: FC<LanguageVariantProps> = ({
 	refOne,

@@ -3,6 +3,7 @@ export interface InitialStateType {
 	language: 'RU' | 'EN' | 'KAZ'
 	languageStatus: boolean
 	globalSearch: string
+	phoneForApplication: any
 	/* 	hotels: []
 	sanatoriums: []
 	camps: []
