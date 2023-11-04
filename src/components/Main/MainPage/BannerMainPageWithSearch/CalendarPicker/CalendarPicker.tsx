@@ -8,7 +8,9 @@ import 'react-date-range/dist/styles.css' // main css file
 import 'react-date-range/dist/theme/default.css' // theme css file
 import { useAppDispatch, useAppSelector } from '../../../../../custom/hooks'
 import {
+	selectCalendarWindowOpen,
 	selectDate,
+	setCalendarWindowOpen,
 	setDateCalendar,
 } from '../../../../../state/Slices/MainPageSlice/MainPageSlice'
 import CustomButton from '../../../../../custom/UI/CustomButton/CustomButton'
@@ -22,6 +24,7 @@ const CalendarPicker: FC = () => {
 		},
 	])
 	const calendarValue = useAppSelector(selectDate)
+	const calendarWindowOpen = useAppSelector(selectCalendarWindowOpen)
 
 	const dispatch = useAppDispatch()
 
@@ -39,10 +42,9 @@ const CalendarPicker: FC = () => {
 		dispatch(setDateCalendar('Любые даты'))
 	}
 
-	const [openCalendar, setOpenCalendar] = useState<boolean>(false)
 	const hideOnEscape = (e: any) => {
 		if (e.key === 'Escape') {
-			setOpenCalendar(false)
+			dispatch(setCalendarWindowOpen(false))
 		}
 	}
 
@@ -50,7 +52,7 @@ const CalendarPicker: FC = () => {
 	const hideClickOutside = (e: any) => {
 		// @ts-ignore
 		if (refHide.current && !refHide.current.contains(e.target)) {
-			setOpenCalendar(false)
+			dispatch(setCalendarWindowOpen(false))
 		}
 	}
 
@@ -61,7 +63,7 @@ const CalendarPicker: FC = () => {
 	return (
 		<>
 			<input
-				onClick={() => setOpenCalendar(!openCalendar)}
+				onClick={() => dispatch(setCalendarWindowOpen(!calendarWindowOpen))}
 				readOnly
 				className={styles.inputCalendar}
 				value={
@@ -74,7 +76,7 @@ const CalendarPicker: FC = () => {
 				}
 			/>
 			<div className={styles.calendarElement} ref={refHide}>
-				{openCalendar && (
+				{calendarWindowOpen && (
 					<>
 						<DateRange
 							className={styles.calendar}

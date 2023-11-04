@@ -1,4 +1,4 @@
-import { FC, MouseEvent } from 'react'
+import { FC, FormEvent } from 'react'
 import {
 	RiAlarmLine,
 	RiHeartPulseFill,
@@ -13,22 +13,34 @@ import styles from './BannerMainPageWithSearch.module.scss'
 import { useAppDispatch, useAppSelector } from '../../../../custom/hooks'
 import {
 	selectDataStatus,
+	selectWhere,
+	selectWhereWindowOpen,
 	selectWho,
+	selectWhoChildren,
+	selectWhoWindowOpen,
 	setDataStatus,
 } from '../../../../state/Slices/MainPageSlice/MainPageSlice'
-import { PiMapPinLine } from 'react-icons/pi'
-import { AiOutlineUser } from 'react-icons/ai'
+
 import CalendarPicker from './CalendarPicker/CalendarPicker'
 import CustomButton from '../../../../custom/UI/CustomButton/CustomButton'
+import WhoChanger from './WhoChanger/WhoChanger'
+import WhereChanger from './WhereChanger/WhereChanger'
 
 const BannerMainPageWithSearch: FC = () => {
-	const dataStatus = useAppSelector(selectDataStatus)
-	const dataWho = useAppSelector(selectWho)
 	const dispatch = useAppDispatch()
 
-	const searchSubmitHandler = (event: MouseEvent<HTMLButtonElement>) => {
+	const dataStatus = useAppSelector(selectDataStatus)
+	const dataWho = useAppSelector(selectWho)
+	const dataWhoChildren = useAppSelector(selectWhoChildren)
+	const dataWhoOpenWindow = useAppSelector(selectWhoWindowOpen)
+	const dataWhere = useAppSelector(selectWhere)
+	const whereWindowOpen = useAppSelector(selectWhereWindowOpen)
+
+	//отправка результата формы
+	const searchSubmitHandler = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
 	}
+
 	return (
 		<>
 			<div className={styles.mainBannerWrapper}>
@@ -95,18 +107,15 @@ const BannerMainPageWithSearch: FC = () => {
 								<span>Горячие источники</span>
 							</div>
 						</div>
-						<form action='submit' className={styles.searchContent}>
-							<div className={styles.mainWhere}>
-								<PiMapPinLine className={styles.icon} />
-								<div className={styles.whereContent}>
-									<span>Куда?</span>
-									<input
-										placeholder='Весь Казахстан'
-										className={styles.inputWhere}
-										type='text'
-									/>
-								</div>
-							</div>
+						<form
+							action='submit'
+							onSubmit={searchSubmitHandler}
+							className={styles.searchContent}
+						>
+							<WhereChanger
+								dataWhere={dataWhere}
+								whereWindowOpen={whereWindowOpen}
+							/>
 							<div className={styles.mainWhen}>
 								<LuCalendarSearch className={styles.icon} />
 								<div className={styles.whenContent}>
@@ -114,16 +123,12 @@ const BannerMainPageWithSearch: FC = () => {
 									<CalendarPicker />
 								</div>
 							</div>
-							<div className={styles.mainWho}>
-								<AiOutlineUser className={styles.icon} />
-								<div className={styles.whoContent}>
-									<span>Кто?</span>
-									<div>{dataWho} взр</div>
-									<div className={styles.whoChanger}></div>
-								</div>
-							</div>
+							<WhoChanger
+								dataWho={dataWho}
+								dataWhoChildren={dataWhoChildren}
+								dataWhoOpenWindow={dataWhoOpenWindow}
+							/>
 							<CustomButton
-								onClick={searchSubmitHandler}
 								style={{ maxWidth: '120px', borderRadius: '32px' }}
 								variant='orange'
 								type='submit'

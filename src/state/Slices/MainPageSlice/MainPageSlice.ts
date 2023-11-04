@@ -4,16 +4,21 @@ import { RootType } from '../../store'
 import { InitialStateType } from './MainPageSliceTypes'
 
 const initialState: InitialStateType = {
+	//header state
 	menuStatus: false,
 	language: 'RU',
 	languageStatus: false,
 	globalSearch: '',
 	phoneForApplication: '',
+	//big filter inputs
 	dataStatus: 'hotels',
 	where: '',
 	when: [],
 	who: 2,
 	whoChildren: 0,
+	//windows
+	whereWindowOpen: false,
+	calendarWindowOpen: false,
 	whoWindowOpen: false,
 	date: 'Любые даты',
 }
@@ -57,6 +62,15 @@ export const mainPageSlice = createSlice({
 		setWhoWindowOpen: (state, action: PayloadAction<boolean>) => {
 			state.whoWindowOpen = action.payload
 		},
+		setWhere: (state, action: PayloadAction<string>) => {
+			state.where = action.payload
+		},
+		setWhereWindowOpen: (state, action: PayloadAction<boolean>) => {
+			state.whereWindowOpen = action.payload
+		},
+		setCalendarWindowOpen: (state, action: PayloadAction<boolean>) => {
+			state.calendarWindowOpen = action.payload
+		},
 	},
 })
 
@@ -72,13 +86,17 @@ export const selectGlobalSearch = (state: RootType) =>
 export const selectPhoneForApplication = (state: RootType) =>
 	state.mainPage.phoneForApplication
 export const selectDataStatus = (state: RootType) => state.mainPage.dataStatus
-export const selectWhere = (state: RootType) => state.mainPage.where
 export const selectWhen = (state: RootType) => state.mainPage.when
 export const selectWho = (state: RootType) => state.mainPage.who
 export const selectWhoChildren = (state: RootType) => state.mainPage.whoChildren
 export const selectWhoWindowOpen = (state: RootType) =>
 	state.mainPage.whoWindowOpen
 export const selectDate = (state: RootType) => state.mainPage.date
+export const selectWhere = (state: RootType) => state.mainPage.where
+export const selectWhereWindowOpen = (state: RootType) =>
+	state.mainPage.whereWindowOpen
+export const selectCalendarWindowOpen = (state: RootType) =>
+	state.mainPage.calendarWindowOpen
 
 //actions
 export const {
@@ -92,4 +110,7 @@ export const {
 	setWhoChildren,
 	setWho,
 	setWhoWindowOpen,
+	setWhere,
+	setWhereWindowOpen,
+	setCalendarWindowOpen,
 } = mainPageSlice.actions

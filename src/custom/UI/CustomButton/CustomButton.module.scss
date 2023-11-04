@@ -32,6 +32,9 @@
 	&:hover {
 		will-change: transform;
 	}
+	&:active {
+		transform: scale(0.9);
+	}
 }
 
 .variantGreen {

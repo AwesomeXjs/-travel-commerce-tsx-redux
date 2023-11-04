@@ -19,6 +19,7 @@
 .calendar {
 	padding: 20px;
 	border-radius: 20px;
+	animation: openWIndow 0.3s;
 }
 .buttonCalendar {
 	background-color: $accentGreen;
@@ -47,4 +48,14 @@
 .buttonsWrapper {
 	padding: 0 0 20px 0;
 	width: 80%;
+	animation: openWIndow 0.3s;
+}
+
+@keyframes openWIndow {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }

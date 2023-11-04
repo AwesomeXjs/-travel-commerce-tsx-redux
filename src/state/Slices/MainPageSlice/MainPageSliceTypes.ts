@@ -9,7 +9,10 @@ export interface InitialStateType {
 	when: number[] | string
 	who: number
 	whoChildren: number
+	//windows:
+	whereWindowOpen: boolean
 	whoWindowOpen: boolean
+	calendarWindowOpen: boolean
 	date: string[] | string
 	/* 	hotels: []
 	sanatoriums: []

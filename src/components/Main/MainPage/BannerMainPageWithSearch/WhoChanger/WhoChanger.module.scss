@@ -1,0 +1,91 @@
+@import '../../../../../scss/variables';
+
+.mainWho {
+	display: flex;
+	align-items: center;
+}
+.icon {
+	color: $accentGreen;
+}
+.whoContent {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	margin-left: 12px;
+}
+.whoChanger {
+	padding: 20px;
+	background-color: white;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	top: 130%;
+	left: -10%;
+	min-width: 334px;
+	border-radius: $radius;
+	-webkit-box-shadow: 0px 2px 24px 16px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 0px 2px 24px 16px rgba(34, 60, 80, 0.2);
+	box-shadow: 0px 2px 24px 16px rgba(34, 60, 80, 0.2);
+	animation: openWIndow 0.3s;
+	& h3 {
+		font-size: 20px;
+	}
+}
+.dataWhoQty {
+	min-width: 130px;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1;
+	cursor: pointer;
+	margin-right: 10px;
+}
+.whoData {
+	width: 100%;
+}
+.dataWhoQty {
+	width: 100%;
+}
+.qtyOfOld,
+.qtyOfChildren {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+	font-size: 14px;
+	font-family: $userfont;
+}
+.changer {
+	display: flex;
+	width: 30%;
+	justify-content: space-between;
+	& div {
+		display: flex;
+		align-items: center;
+	}
+}
+.minus,
+.plus {
+	cursor: pointer;
+	transition: $transition;
+	&:active {
+		transform: scale(0.8);
+	}
+}
+.whoTitle {
+	margin-bottom: 10px;
+}
+.quantity {
+	background-color: #f5f3f3;
+	border-radius: 10px;
+	padding: 5px 15px;
+}
+
+@keyframes openWIndow {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
