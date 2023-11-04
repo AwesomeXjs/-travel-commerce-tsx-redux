@@ -42,12 +42,7 @@ export const mainPageSlice = createSlice({
 		setPhoneForApplication: (state, action: PayloadAction<any>) => {
 			state.phoneForApplication = action.payload
 		},
-		setDataStatus: (
-			state,
-			action: PayloadAction<
-				'hotels' | 'camps' | 'hotSprings' | 'sanatoriums' | 'fewDays'
-			>
-		) => {
+		setDataStatus: (state, action: PayloadAction<string>) => {
 			state.dataStatus = action.payload
 		},
 		setDateCalendar: (state, action: PayloadAction<string[] | string>) => {

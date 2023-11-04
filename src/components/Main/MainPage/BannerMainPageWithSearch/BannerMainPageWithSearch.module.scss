@@ -20,8 +20,7 @@
 	position: absolute;
 	display: flex;
 	top: 0;
-	bottom: 40%;
-	left: 29%;
+	left: 23%;
 
 	height: 50%;
 }
@@ -33,68 +32,6 @@
 	height: 100%;
 	justify-content: center;
 	align-items: center;
-	color: $special-text;
-}
-.categories {
-	margin-bottom: 10px;
-	display: flex;
-	& div:last-child {
-		margin-right: 0;
-	}
-}
-.hotels,
-.sanatoriums,
-.fewDays,
-.camps,
-.hotStrings {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	cursor: pointer;
-	padding: 10px 26px;
-	background-color: white;
-	margin-right: 10px;
-	border-radius: $radius;
-	font-size: 20px;
-	color: $accentGreen;
-	overflow: hidden;
-	position: relative;
-	text-decoration: none;
-	transition: 0.2s transform ease-in-out;
-	will-change: transform;
-	z-index: 0;
-	&::after {
-		background-color: $accentGreen;
-		border-radius: $radius;
-		content: '';
-		display: block;
-		height: 100%;
-		width: 100%;
-		position: absolute;
-		left: 0;
-		top: 0;
-		transform: translate(-100%, 0) rotate(10deg);
-		transform-origin: top left;
-		transition: 0.2s transform ease-out;
-		will-change: transform;
-		z-index: -1;
-	}
-	&:hover::after {
-		transform: translate(0, 0);
-	}
-
-	&:hover {
-		color: $special-text;
-	}
-	&:active {
-		transform: scale(0.9);
-	}
-	& span {
-		margin-left: 6px;
-	}
-}
-.active {
-	background-color: $accentGreen;
 	color: $special-text;
 }
 
@@ -113,6 +50,9 @@
 	border-radius: 32px;
 	padding-left: 25px;
 	font-size: 20px;
+	& > button {
+		max-width: 160px;
+	}
 }
 
 .whenContent {
@@ -123,4 +63,90 @@
 }
 .icon {
 	color: $accentGreen;
+}
+
+@include hd_plus() {
+	// 1920px --
+}
+
+@include hd() {
+	//1440px --
+
+	.mainLogoBackWrapper {
+		left: 20%;
+	}
+}
+
+@include wide() {
+	//1200px --
+	.mainLogoBackWrapper {
+		display: none;
+	}
+}
+
+@include desktop() {
+	// 992px--
+	.mainLogoBackWrapper {
+		left: 10%;
+	}
+	.searchContent {
+		flex-direction: column;
+		width: 40%;
+		align-items: center;
+		padding: 10px;
+		& > div {
+			margin-bottom: 20px;
+			width: 100%;
+		}
+		& > button {
+			max-width: 100%;
+		}
+	}
+	.mobileVersionSearch {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.mainWhen {
+		border: 2px solid #e1e4ea;
+		background-color: #f9f9f9;
+		padding: 0 15px;
+		border-radius: $radius;
+	}
+	.whenContent {
+		& > span {
+			font-size: 15px;
+		}
+	}
+}
+@include tablet() {
+	// 768px--
+	.searchContent {
+		width: 60%;
+	}
+}
+@include mobile() {
+	// 568px--
+	.searchContent {
+		width: 100%;
+	}
+	.mobileVersionSearch {
+		width: 98%;
+		display: flex;
+		align-items: center;
+	}
+	.mainBannerImageWrapper {
+		position: relative;
+		background: url('../../../../assets/maldives.png');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 30vh;
+	}
+	.searchContent {
+		width: 100%;
+	}
+}
+@include mobile-s() {
+	// 414px--
 }

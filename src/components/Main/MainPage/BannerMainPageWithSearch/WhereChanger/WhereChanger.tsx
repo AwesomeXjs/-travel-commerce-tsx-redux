@@ -43,6 +43,7 @@ const WhereChanger: FC<WhereChangerProps> = ({
 					type='text'
 				/>
 				<div ref={refHideWhere}>
+					{/* 	{dataWhere.trim().length > 0 */}
 					{whereWindowOpen && (
 						<div className={styles.whereList}>
 							<h3 className={styles.whereListTitle}>Выберите город</h3>

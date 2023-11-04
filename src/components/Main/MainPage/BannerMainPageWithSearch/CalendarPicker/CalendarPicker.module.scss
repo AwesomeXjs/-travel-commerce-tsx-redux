@@ -2,7 +2,7 @@
 
 .calendarElement {
 	position: absolute;
-	top: 100%;
+	top: 130%;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 999;
@@ -58,4 +58,41 @@
 	100% {
 		opacity: 1;
 	}
+}
+
+@include hd_plus() {
+	// 1920px --
+}
+
+@include hd() {
+	//1440px --
+}
+
+@include wide() {
+	//1200px --
+}
+
+@include desktop() {
+	// 992px--
+	.inputCalendar {
+		background-color: #f9f9f9;
+	}
+}
+@include tablet() {
+	// 768px--
+	.calendarElement {
+		left: 62%;
+	}
+	.calendar {
+		max-width: 340px;
+	}
+}
+@include mobile() {
+	// 568px--
+	.calendarElement {
+		left: 59%;
+	}
+}
+@include mobile-s() {
+	// 414px--
 }

@@ -4,7 +4,7 @@ export interface InitialStateType {
 	languageStatus: boolean
 	globalSearch: string
 	phoneForApplication: any
-	dataStatus: 'hotels' | 'camps' | 'hotSprings' | 'sanatoriums' | 'fewDays'
+	dataStatus: string
 	where: string
 	when: number[] | string
 	who: number

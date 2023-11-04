@@ -41,10 +41,13 @@ const WhoChanger: FC<WhoChangerProps> = ({
 					onClick={() => dispatch(setWhoWindowOpen(!dataWhoOpenWindow))}
 					className={styles.dataWhoQty}
 				>
-					<span className={styles.mainQty}>{dataWho} взр</span>
-					{!!dataWhoChildren && (
-						<span className={styles.mainQty}>, {dataWhoChildren} детей</span>
-					)}
+					<div>
+						<span className={styles.mainQty}>{dataWho} взр</span>
+						{!!dataWhoChildren && (
+							<span className={styles.mainQty}>, {dataWhoChildren} детей</span>
+						)}
+					</div>
+					<div className={styles.mobileVersionDescr}>Добавить туриста</div>
 				</div>
 				<div ref={refHideWho}>
 					{dataWhoOpenWindow && (

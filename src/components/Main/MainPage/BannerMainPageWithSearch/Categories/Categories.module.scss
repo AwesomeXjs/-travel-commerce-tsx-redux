@@ -1,0 +1,51 @@
+@import '../../../../../scss/variables';
+
+.categoriesPC {
+	margin-bottom: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	& div:last-child {
+		margin-right: 0;
+	}
+}
+
+@include hd_plus() {
+	// 1920px --
+}
+
+@include hd() {
+	//1440px --
+}
+
+@include wide() {
+	//1200px --
+}
+
+@include desktop() {
+	// 992px--
+	.categoriesPC {
+		margin-bottom: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		& > div {
+			margin-bottom: 20px;
+		}
+		& div:last-child {
+			margin-right: 0;
+		}
+	}
+}
+@include tablet() {
+	// 768px--
+}
+@include mobile() {
+	// 568px--
+	.categoriesPC {
+		display: none;
+	}
+}
+@include mobile-s() {
+	// 414px--
+}
