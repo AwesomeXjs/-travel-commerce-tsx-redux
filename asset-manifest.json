@@ -1,18 +1,22 @@
 {
   "files": {
-    "main.css": "/-travel-commerce-tsx-redux/static/css/main.6fb6d0e5.css",
-    "main.js": "/-travel-commerce-tsx-redux/static/js/main.caa6da34.js",
+    "main.css": "/-travel-commerce-tsx-redux/static/css/main.381b5f6c.css",
+    "main.js": "/-travel-commerce-tsx-redux/static/js/main.dae830f0.js",
     "static/media/maldives.png": "/-travel-commerce-tsx-redux/static/media/maldives.5c0a47d41721ee6ca99c.png",
     "static/media/ulyDalaBack.png": "/-travel-commerce-tsx-redux/static/media/ulyDalaBack.bda23a3e079eecb6e525.png",
     "static/media/photoGirlTour.png": "/-travel-commerce-tsx-redux/static/media/photoGirlTour.a858b72884295ef55937.png",
     "static/media/logo.png": "/-travel-commerce-tsx-redux/static/media/logo.0e9ad61ec37c31dc5a8d.png",
     "static/media/logoMobile.png": "/-travel-commerce-tsx-redux/static/media/logoMobile.42f59c0519be264649c2.png",
+    "static/media/slick.svg": "/-travel-commerce-tsx-redux/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/-travel-commerce-tsx-redux/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/-travel-commerce-tsx-redux/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/-travel-commerce-tsx-redux/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/-travel-commerce-tsx-redux/index.html",
-    "main.6fb6d0e5.css.map": "/-travel-commerce-tsx-redux/static/css/main.6fb6d0e5.css.map",
-    "main.caa6da34.js.map": "/-travel-commerce-tsx-redux/static/js/main.caa6da34.js.map"
+    "main.381b5f6c.css.map": "/-travel-commerce-tsx-redux/static/css/main.381b5f6c.css.map",
+    "main.dae830f0.js.map": "/-travel-commerce-tsx-redux/static/js/main.dae830f0.js.map"
   },
   "entrypoints": [
-    "static/css/main.6fb6d0e5.css",
-    "static/js/main.caa6da34.js"
+    "static/css/main.381b5f6c.css",
+    "static/js/main.dae830f0.js"
   ]
 }
