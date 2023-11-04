@@ -47,7 +47,46 @@
 		margin-left: 6px;
 	}
 }
-.active {
+.categoryItem.active {
 	background-color: $accentGreen;
 	color: $special-text;
+}
+
+@include hd_plus() {
+	// 1920px --
+}
+
+@include hd() {
+	//1440px --
+}
+
+@include wide() {
+	//1200px --
+}
+
+@include desktop() {
+	// 992px--
+}
+@include tablet() {
+	// 768px--
+}
+@include mobile() {
+	// 568px--
+	.categoryItem {
+		font-size: 14px;
+		flex-direction: column;
+		text-align: center;
+		justify-content: center;
+		padding: 10px;
+		line-height: 1;
+		height: 65px;
+		margin: 17px 0 20px 5px;
+		background-color: #f2f9ed;
+		& span {
+			margin-left: 0px;
+		}
+	}
+}
+@include mobile-s() {
+	// 414px--
 }

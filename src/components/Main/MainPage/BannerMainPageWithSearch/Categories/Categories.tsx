@@ -1,8 +1,9 @@
 import { FC } from 'react'
 
 import styles from './Categories.module.scss'
-import { arrayCategories } from './CategoryArray'
+
 import CategoryItem from './CategoryItem/CategoryItem'
+import { arrayCategories } from './CategoryArray'
 
 export interface CategoriesProps {
 	dataStatus: string

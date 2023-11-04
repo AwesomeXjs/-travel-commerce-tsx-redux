@@ -76,6 +76,9 @@ body {
 }
 @include mobile() {
 	// 568px--
+	body {
+		overflow-x: hidden;
+	}
 }
 @include mobile-s() {
 	// 414px--

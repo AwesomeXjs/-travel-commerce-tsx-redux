@@ -5,8 +5,9 @@ import {
 	RiHotelLine,
 	RiTreeLine,
 } from 'react-icons/ri'
+import { CategoriesType } from '../../../../../types/MainPageTypes'
 
-export const arrayCategories = [
+export const arrayCategories: CategoriesType[] = [
 	{
 		title: 'Отели',
 		type: 'hotels',

@@ -18,6 +18,7 @@ import CustomButton from '../../../../custom/UI/CustomButton/CustomButton'
 import WhoChanger from './WhoChanger/WhoChanger'
 import WhereChanger from './WhereChanger/WhereChanger'
 import Categories from './Categories/Categories'
+import MobileVersionCategories from './MobileVersionCategories/MobileVersionCategories'
 
 const BannerMainPageWithSearch: FC = () => {
 	const dataStatus = useAppSelector(selectDataStatus)
@@ -41,7 +42,16 @@ const BannerMainPageWithSearch: FC = () => {
 				</div>
 				<div className={styles.mainFilterWrapper}>
 					<div className={styles.mobileVersionSearch}>
-						<Categories dataStatus={dataStatus} />
+						{<Categories dataStatus={dataStatus} />}
+						{
+							<div className={styles.mobileVersionSliderCategory}>
+								<h1>Найти подходящий тур</h1>
+								<div className={styles.sliderWrapper}>
+									<MobileVersionCategories />
+								</div>
+							</div>
+						}
+
 						<form
 							action='submit'
 							onSubmit={searchSubmitHandler}

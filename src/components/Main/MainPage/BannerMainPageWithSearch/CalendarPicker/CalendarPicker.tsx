@@ -75,39 +75,41 @@ const CalendarPicker: FC = () => {
 						: 'Любые даты'
 				}
 			/>
-			<div className={styles.calendarElement} ref={refHide}>
-				{calendarWindowOpen && (
-					<>
-						<DateRange
-							className={styles.calendar}
-							date={new Date()}
-							editableDateInputs={true}
-							moveRangeOnFirstSelection={false}
-							ranges={range}
-							months={1}
-							direction='horizontal'
-							//@ts-ignore
-							onChange={item => setRange([item.selection])}
-						/>
-						<div className={styles.buttonsWrapper}>
-							<CustomButton
-								style={{ marginBottom: '15px', fontSize: '14px' }}
-								variant='backWhiteBorderGreen'
-								onClick={addRandomDatesHandler}
-							>
-								Любые даты
-							</CustomButton>
-							<CustomButton
-								style={{ fontSize: '14px' }}
-								variant='green'
-								onClick={addCalendarDateHandler}
-							>
-								Выбрать эти даты
-							</CustomButton>
-						</div>
-					</>
-				)}
-			</div>
+			{calendarWindowOpen && (
+				<div className={styles.calendarElement} ref={refHide}>
+					{
+						<>
+							<DateRange
+								className={styles.calendar}
+								date={new Date()}
+								editableDateInputs={true}
+								moveRangeOnFirstSelection={false}
+								ranges={range}
+								months={1}
+								direction='horizontal'
+								//@ts-ignore
+								onChange={item => setRange([item.selection])}
+							/>
+							<div className={styles.buttonsWrapper}>
+								<CustomButton
+									style={{ marginBottom: '15px', fontSize: '14px' }}
+									variant='backWhiteBorderGreen'
+									onClick={addRandomDatesHandler}
+								>
+									Любые даты
+								</CustomButton>
+								<CustomButton
+									style={{ fontSize: '14px' }}
+									variant='green'
+									onClick={addCalendarDateHandler}
+								>
+									Выбрать эти даты
+								</CustomButton>
+							</div>
+						</>
+					}
+				</div>
+			)}
 		</>
 	)
 }

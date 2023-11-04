@@ -17,6 +17,7 @@ const App: FC = () => {
 		<div>
 			<Header />
 			<Main />
+
 			{menuStatus && (
 				<div
 					onClick={changeMenuStatusHandler}
