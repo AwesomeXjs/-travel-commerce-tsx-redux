@@ -1,0 +1,57 @@
+@import '../../../../../scss/variables';
+
+.mainPageFilterWrapper {
+	padding: 46px 54px;
+	width: 25%;
+	-webkit-box-shadow: 0px 2px 24px 16px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 0px 2px 24px 16px rgba(34, 60, 80, 0.2);
+	box-shadow: 0px 2px 24px 16px rgba(34, 60, 80, 0.2);
+	border-radius: $radius;
+	margin-top: 26px;
+	color: black;
+}
+.mainPageFilterMyOrderTitle {
+	background-color: $accentBlue;
+	display: inline-block;
+	padding: 5px 10px;
+	color: white;
+	border-radius: 6px;
+	font-weight: normal;
+	margin-bottom: 20px;
+	font-size: 23px;
+}
+
+.mainPageFilterWhere,
+.mainPageFilterWhen,
+.mainPageFilterWho {
+	margin-bottom: 15px;
+	& > span {
+		font-weight: bold;
+		font-size: 20px;
+	}
+}
+
+.mainPageFilterIcon {
+	color: $accentGreen;
+	margin-right: 18px;
+}
+
+.inputWrapper {
+	display: flex;
+	align-items: center;
+}
+
+.mainPageFilterCheckboxAnotherSpot {
+	width: 20px;
+	height: 20px;
+	background-color: #f9f9f9;
+	color: $accentBlue;
+	border: 2px solid #edeff2;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.mainPageFilterWithAnotherPlace {
+	font-size: 20px;
+}

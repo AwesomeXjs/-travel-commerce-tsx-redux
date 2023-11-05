@@ -9,10 +9,12 @@ import { useAppDispatch, useAppSelector } from '../../custom/hooks'
 
 import LogoAndMobileSearch from './LogoAndMobileSearch/LogoAndMobileSearch'
 import {
+	selectBackgroundOpacity,
 	selectGlobalSearch,
 	selectLanguage,
 	selectLanguageStatus,
 	selectMenuStatus,
+	setBackgroundOpacity,
 	setGlobalSearch,
 	setLanguageStatus,
 	setMenuStatus,
@@ -25,7 +27,7 @@ const Header: FC = () => {
 	const searchValue = useAppSelector(selectGlobalSearch)
 	const languageStatus = useAppSelector(selectLanguageStatus)
 	const language = useAppSelector(selectLanguage)
-
+	const backgroundOpacity = useAppSelector(selectBackgroundOpacity)
 	//dispatches
 	const dispatch = useAppDispatch()
 
@@ -39,6 +41,7 @@ const Header: FC = () => {
 
 	const changeMenuStatusHandler = () => {
 		dispatch(setMenuStatus(!menuStatus))
+		dispatch(setBackgroundOpacity(!backgroundOpacity))
 	}
 
 	//useRef
@@ -52,7 +55,13 @@ const Header: FC = () => {
 
 	return (
 		<header className={styles.mainHeader}>
-			<div className={`${styles.headerWrapper} container`}>
+			<div
+				className={
+					menuStatus
+						? `${styles.headerWrapper} ${styles.activeBackgroundOpacity} container`
+						: `${styles.headerWrapper} container`
+				}
+			>
 				<div className={styles.headerFirstSection}>
 					<Hamburger
 						menuStatus={menuStatus}

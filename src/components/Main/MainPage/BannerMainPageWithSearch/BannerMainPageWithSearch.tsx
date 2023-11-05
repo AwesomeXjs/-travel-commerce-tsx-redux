@@ -5,7 +5,10 @@ import logo from '../../../../assets/ulyDalaBack.png'
 import styles from './BannerMainPageWithSearch.module.scss'
 import { useAppSelector } from '../../../../custom/hooks'
 import {
+	selectBackgroundOpacity,
+	selectCalendarWindowOpen,
 	selectDataStatus,
+	selectDate,
 	selectWhere,
 	selectWhereWindowOpen,
 	selectWho,
@@ -27,6 +30,10 @@ const BannerMainPageWithSearch: FC = () => {
 	const dataWhoOpenWindow = useAppSelector(selectWhoWindowOpen)
 	const dataWhere = useAppSelector(selectWhere)
 	const whereWindowOpen = useAppSelector(selectWhereWindowOpen)
+	const backGroundOpacity = useAppSelector(selectBackgroundOpacity)
+	const calendarValue = useAppSelector(selectDate)
+	const calendarWindowOpen = useAppSelector(selectCalendarWindowOpen)
+	const backgroundOpacity = useAppSelector(selectBackgroundOpacity)
 
 	//отправка результата формы
 	const searchSubmitHandler = (event: FormEvent<HTMLFormElement>) => {
@@ -34,7 +41,7 @@ const BannerMainPageWithSearch: FC = () => {
 	}
 
 	return (
-		<>
+		<div>
 			<div className={styles.mainBannerWrapper}>
 				<div className={styles.mainBannerImageWrapper}></div>
 				<div className={styles.mainLogoBackWrapper}>
@@ -58,17 +65,29 @@ const BannerMainPageWithSearch: FC = () => {
 							className={styles.searchContent}
 						>
 							<WhereChanger
+								backgroundOpacity={backGroundOpacity}
 								dataWhere={dataWhere}
 								whereWindowOpen={whereWindowOpen}
 							/>
-							<div className={styles.mainWhen}>
+							<div
+								className={
+									calendarWindowOpen
+										? `${styles.mainWhen} ${styles.activeBackgroundOpacity}`
+										: styles.mainWhen
+								}
+							>
 								<LuCalendarSearch className={styles.icon} />
 								<div className={styles.whenContent}>
 									<span>Когда?</span>
-									<CalendarPicker />
+									<CalendarPicker
+										calendarValue={calendarValue}
+										calendarWindowOpen={calendarWindowOpen}
+										backgroundOpacity={backgroundOpacity}
+									/>
 								</div>
 							</div>
 							<WhoChanger
+								backgroundOpacity={backGroundOpacity}
 								dataWho={dataWho}
 								dataWhoChildren={dataWhoChildren}
 								dataWhoOpenWindow={dataWhoOpenWindow}
@@ -84,7 +103,7 @@ const BannerMainPageWithSearch: FC = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }
 

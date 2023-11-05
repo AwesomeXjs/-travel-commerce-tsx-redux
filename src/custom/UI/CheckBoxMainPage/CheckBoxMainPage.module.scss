@@ -1,0 +1,13 @@
+@import '../../../scss/variables';
+
+.checkBoxMainPageStyle {
+	width: 20px;
+	height: 20px;
+	background-color: #f9f9f9;
+	color: $accentBlue;
+	border: 2px solid #edeff2;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

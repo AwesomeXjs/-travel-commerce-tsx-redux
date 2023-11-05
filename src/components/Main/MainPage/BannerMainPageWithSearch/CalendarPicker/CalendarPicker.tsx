@@ -6,16 +6,25 @@ import { addDays } from 'date-fns'
 import styles from './CalendarPicker.module.scss'
 import 'react-date-range/dist/styles.css' // main css file
 import 'react-date-range/dist/theme/default.css' // theme css file
-import { useAppDispatch, useAppSelector } from '../../../../../custom/hooks'
+import { useAppDispatch } from '../../../../../custom/hooks'
 import {
-	selectCalendarWindowOpen,
-	selectDate,
+	setBackgroundOpacity,
 	setCalendarWindowOpen,
 	setDateCalendar,
 } from '../../../../../state/Slices/MainPageSlice/MainPageSlice'
 import CustomButton from '../../../../../custom/UI/CustomButton/CustomButton'
 
-const CalendarPicker: FC = () => {
+export interface CalendarProps {
+	calendarValue: string | string[]
+	calendarWindowOpen: boolean
+	backgroundOpacity: boolean
+}
+
+const CalendarPicker: FC<CalendarProps> = ({
+	calendarValue,
+	calendarWindowOpen,
+	backgroundOpacity,
+}) => {
 	const [range, setRange] = useState([
 		{
 			startDate: new Date(),
@@ -23,8 +32,6 @@ const CalendarPicker: FC = () => {
 			key: 'selection',
 		},
 	])
-	const calendarValue = useAppSelector(selectDate)
-	const calendarWindowOpen = useAppSelector(selectCalendarWindowOpen)
 
 	const dispatch = useAppDispatch()
 
@@ -63,7 +70,10 @@ const CalendarPicker: FC = () => {
 	return (
 		<>
 			<input
-				onClick={() => dispatch(setCalendarWindowOpen(!calendarWindowOpen))}
+				onClick={() => {
+					dispatch(setCalendarWindowOpen(!calendarWindowOpen))
+					dispatch(setBackgroundOpacity(true))
+				}}
 				readOnly
 				className={styles.inputCalendar}
 				value={

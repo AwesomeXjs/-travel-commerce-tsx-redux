@@ -1,4 +1,5 @@
 import BannerMainPageWithSearch from './MainPage/BannerMainPageWithSearch/BannerMainPageWithSearch'
+import MainPageContent from './MainPage/MainPageContent/MainPageContent'
 import SearchTourPhoneBanner from './MainPage/SearchTourPhoneBanner/SearchTourPhoneBanner'
 
 const Main = () => {
@@ -6,6 +7,7 @@ const Main = () => {
 		<>
 			<SearchTourPhoneBanner />
 			<BannerMainPageWithSearch />
+			<MainPageContent />
 		</>
 	)
 }

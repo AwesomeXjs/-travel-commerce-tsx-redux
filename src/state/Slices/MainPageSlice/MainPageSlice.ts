@@ -12,15 +12,18 @@ const initialState: InitialStateType = {
 	phoneForApplication: '',
 	//big filter inputs
 	dataStatus: 'hotels',
-	where: '',
+	where: 'Весь Казахстан',
 	when: [],
 	who: 2,
 	whoChildren: 0,
 	//windows
+	backgroundOpacity: false,
 	whereWindowOpen: false,
 	calendarWindowOpen: false,
 	whoWindowOpen: false,
 	date: 'Любые даты',
+	//MAIN PAGE FILTER INPUTS
+	anotherSpot: false,
 }
 
 export const mainPageSlice = createSlice({
@@ -66,6 +69,12 @@ export const mainPageSlice = createSlice({
 		setCalendarWindowOpen: (state, action: PayloadAction<boolean>) => {
 			state.calendarWindowOpen = action.payload
 		},
+		setBackgroundOpacity: (state, action: PayloadAction<boolean>) => {
+			state.backgroundOpacity = action.payload
+		},
+		setAnotherSpot: (state, action: PayloadAction<any>) => {
+			state.anotherSpot = action.payload
+		},
 	},
 })
 
@@ -92,6 +101,9 @@ export const selectWhereWindowOpen = (state: RootType) =>
 	state.mainPage.whereWindowOpen
 export const selectCalendarWindowOpen = (state: RootType) =>
 	state.mainPage.calendarWindowOpen
+export const selectBackgroundOpacity = (state: RootType) =>
+	state.mainPage.backgroundOpacity
+export const selectAnotherSpot = (state: RootType) => state.mainPage.anotherSpot
 
 //actions
 export const {
@@ -108,4 +120,6 @@ export const {
 	setWhere,
 	setWhereWindowOpen,
 	setCalendarWindowOpen,
+	setBackgroundOpacity,
+	setAnotherSpot,
 } = mainPageSlice.actions

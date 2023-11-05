@@ -1,8 +1,9 @@
 import styles from './Menu.module.scss'
 import { useAppSelector } from '../../../custom/hooks'
 import { selectMenuStatus } from '../../../state/Slices/MainPageSlice/MainPageSlice'
+import { FC } from 'react'
 
-const Menu = () => {
+const Menu: FC = () => {
 	const menuStatus = useAppSelector(selectMenuStatus)
 	return (
 		<div

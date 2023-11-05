@@ -2,6 +2,7 @@ import { FC, useEffect, useRef } from 'react'
 import styles from './WhoChanger.module.scss'
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineUser } from 'react-icons/ai'
 import {
+	setBackgroundOpacity,
 	setWho,
 	setWhoChildren,
 	setWhoWindowOpen,
@@ -13,12 +14,14 @@ export interface WhoChangerProps {
 	dataWho: number
 	dataWhoChildren: number
 	dataWhoOpenWindow: boolean
+	backgroundOpacity: boolean
 }
 
 const WhoChanger: FC<WhoChangerProps> = ({
 	dataWho,
 	dataWhoChildren,
 	dataWhoOpenWindow,
+	backgroundOpacity,
 }) => {
 	const dispatch = useAppDispatch()
 	//hide whoWindow on click
@@ -33,18 +36,27 @@ const WhoChanger: FC<WhoChangerProps> = ({
 		document.addEventListener('click', hideClickOutsideWhoWindow, true)
 	}, [])
 	return (
-		<div className={styles.mainWho}>
+		<div
+			className={
+				dataWhoOpenWindow
+					? `${styles.mainWho} ${styles.activeBackground}`
+					: styles.mainWho
+			}
+		>
 			<AiOutlineUser className={styles.icon} />
 			<div className={styles.whoContent}>
 				<span>Кто?</span>
 				<div
-					onClick={() => dispatch(setWhoWindowOpen(!dataWhoOpenWindow))}
+					onClick={() => {
+						dispatch(setWhoWindowOpen(!dataWhoOpenWindow))
+						dispatch(setBackgroundOpacity(true))
+					}}
 					className={styles.dataWhoQty}
 				>
 					<div>
 						<span className={styles.mainQty}>{dataWho} взр</span>
 						{!!dataWhoChildren && (
-							<span className={styles.mainQty}>, {dataWhoChildren} детей</span>
+							<span className={styles.mainQty}>, {dataWhoChildren} дет.</span>
 						)}
 					</div>
 					<div className={styles.mobileVersionDescr}>Добавить туриста</div>

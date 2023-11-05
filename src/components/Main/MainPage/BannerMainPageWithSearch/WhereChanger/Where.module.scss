@@ -5,7 +5,7 @@
 }
 
 .whereContent {
-	position: relative;
+	position: sticky;
 	display: flex;
 	flex-direction: column;
 	margin-left: 12px;
@@ -14,12 +14,19 @@
 .mainWhere {
 	display: flex;
 	align-items: center;
+	background-color: white;
+	border-radius: $radius;
+}
+
+.mainWhere.activeBackground {
+	z-index: 3;
 }
 .inputWhere {
 	font-size: 17px;
 	border: none;
 	font-family: $userfont;
 	font-weight: bold;
+	background-color: #f8f8f8;
 }
 
 //whereList

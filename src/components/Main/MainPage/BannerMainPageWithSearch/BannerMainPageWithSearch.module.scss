@@ -21,7 +21,6 @@
 	display: flex;
 	top: 0;
 	left: 25%;
-
 	height: 50%;
 }
 .mainFilterWrapper {
@@ -38,6 +37,8 @@
 .mainWhen {
 	display: flex;
 	align-items: center;
+	background-color: white;
+	border-radius: $radius;
 }
 .searchContent {
 	width: 100%;
@@ -68,6 +69,9 @@
 //mobile version category
 .mobileVersionSliderCategory {
 	display: none;
+}
+.activeBackgroundOpacity {
+	z-index: 3;
 }
 
 @include hd_plus() {
@@ -118,6 +122,7 @@
 		padding: 0 15px;
 		border-radius: $radius;
 	}
+
 	.whenContent {
 		& > span {
 			font-size: 15px;
@@ -144,7 +149,7 @@
 		justify-content: center;
 		align-items: center;
 		color: black;
-		transform: translateY(-50px);
+		margin-top: -50px;
 		-webkit-box-shadow: 0px 2px 24px 16px rgba(34, 60, 80, 0.2);
 		-moz-box-shadow: 0px 2px 24px 16px rgba(34, 60, 80, 0.2);
 		box-shadow: 0px 2px 24px 16px rgba(34, 60, 80, 0.2);

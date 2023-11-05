@@ -10,10 +10,13 @@ export interface InitialStateType {
 	who: number
 	whoChildren: number
 	//windows:
+	backgroundOpacity: boolean
 	whereWindowOpen: boolean
 	whoWindowOpen: boolean
 	calendarWindowOpen: boolean
 	date: string[] | string
+	//MAIN PAGE FILTER INPUTS
+	anotherSpot: boolean
 	/* 	hotels: []
 	sanatoriums: []
 	camps: []

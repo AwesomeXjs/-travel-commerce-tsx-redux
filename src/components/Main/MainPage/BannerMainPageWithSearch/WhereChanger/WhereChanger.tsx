@@ -2,6 +2,7 @@ import { FC, useEffect, useRef } from 'react'
 import { useAppDispatch } from '../../../../../custom/hooks'
 import styles from './Where.module.scss'
 import {
+	setBackgroundOpacity,
 	setWhere,
 	setWhereWindowOpen,
 } from '../../../../../state/Slices/MainPageSlice/MainPageSlice'
@@ -10,14 +11,15 @@ import { PiMapPinLine } from 'react-icons/pi'
 export interface WhereChangerProps {
 	dataWhere: string
 	whereWindowOpen: boolean
+	backgroundOpacity: boolean
 }
 
 const WhereChanger: FC<WhereChangerProps> = ({
 	dataWhere,
 	whereWindowOpen,
+	backgroundOpacity,
 }) => {
 	const dispatch = useAppDispatch()
-
 	//hide whereWindowOpen
 	const refHideWhere = useRef(null)
 	const hideClickOutsideWhereWindow = (e: any) => {
@@ -30,12 +32,22 @@ const WhereChanger: FC<WhereChangerProps> = ({
 		document.addEventListener('click', hideClickOutsideWhereWindow, true)
 	}, [])
 	return (
-		<div className={styles.mainWhere}>
+		<div
+			className={
+				whereWindowOpen
+					? `${styles.mainWhere} ${styles.activeBackground}`
+					: styles.mainWhere
+			}
+		>
 			<PiMapPinLine className={styles.icon} />
 			<div className={styles.whereContent}>
 				<span>Куда?</span>
 				<input
-					onClick={() => dispatch(setWhereWindowOpen(!whereWindowOpen))}
+					onClick={() => {
+						dispatch(setWhere(''))
+						dispatch(setWhereWindowOpen(!whereWindowOpen))
+						dispatch(setBackgroundOpacity(true))
+					}}
 					value={dataWhere}
 					onChange={e => dispatch(setWhere(e.target.value))}
 					placeholder='Весь Казахстан'

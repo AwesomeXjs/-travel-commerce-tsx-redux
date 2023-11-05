@@ -2,29 +2,35 @@ import { FC } from 'react'
 import Header from './Header/Header'
 import { useAppDispatch, useAppSelector } from '../custom/hooks'
 import {
-	selectMenuStatus,
+	selectBackgroundOpacity,
+	selectWhereWindowOpen,
+	setBackgroundOpacity,
 	setMenuStatus,
 } from '../state/Slices/MainPageSlice/MainPageSlice'
 import Main from './Main/Main'
 
 const App: FC = () => {
 	const dispatch = useAppDispatch()
-	const menuStatus = useAppSelector(selectMenuStatus)
+
+	const searchWhereStatus = useAppSelector(selectWhereWindowOpen)
+
+	const backGroundVisible = useAppSelector(selectBackgroundOpacity)
 	const changeMenuStatusHandler = () => {
 		dispatch(setMenuStatus(false))
+		dispatch(setBackgroundOpacity(false))
 	}
 	return (
-		<div>
+		<>
 			<Header />
 			<Main />
 
-			{menuStatus && (
+			{backGroundVisible && (
 				<div
 					onClick={changeMenuStatusHandler}
 					className='modalBackground'
 				></div>
 			)}
-		</div>
+		</>
 	)
 }
 

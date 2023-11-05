@@ -3,6 +3,11 @@
 .mainWho {
 	display: flex;
 	align-items: center;
+	background-color: white;
+	border-radius: $radius;
+}
+.mainWho.activeBackground {
+	z-index: 3;
 }
 .icon {
 	color: $accentGreen;
