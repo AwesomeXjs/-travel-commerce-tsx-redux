@@ -1,58 +1,56 @@
-import { PiMapPinLine } from 'react-icons/pi'
-import { LuCalendarSearch } from 'react-icons/lu'
-import { AiOutlineUser } from 'react-icons/ai'
-import { Checkbox } from 'primereact/checkbox'
-
 import styles from './MainPageFilter.module.scss'
-import { useAppDispatch, useAppSelector } from '../../../../../custom/hooks'
-import {
-	selectAnotherSpot,
-	selectDate,
-	selectWhere,
-	selectWho,
-	selectWhoChildren,
-	setAnotherSpot,
-} from '../../../../../state/Slices/MainPageSlice/MainPageSlice'
-import CheckBoxMainPage from '../../../../../custom/UI/CheckBoxMainPage/CheckBoxMainPage'
-import { format } from 'path'
+import { makeStyles } from '@material-ui/core/styles'
+
+import Slider from '@material-ui/core/Slider'
+
+import MyOrder from './MyOrder/MyOrder'
+
+import { useState } from 'react'
+const useStyles = makeStyles({
+	root: {
+		width: 300,
+		color: '#4E9F07',
+	},
+})
+
+function valuetext(value: number) {
+	return `${value}°C`
+}
 
 const MainPageFilter = () => {
-	const where = useAppSelector(selectWhere)
-	const when = useAppSelector(selectDate)
-	const whoOld = useAppSelector(selectWho)
-	const whoChild = useAppSelector(selectWhoChildren)
+	const classes = useStyles()
 
-	const dispatch = useAppDispatch()
-	//checkboxes
-	const anotherSpot = useAppSelector(selectAnotherSpot)
+	const [value, setValue] = useState<number[]>([20, 37])
+	const handleChange = (event: any, newValue: number | number[]) => {
+		setValue(newValue as number[])
+	}
+
 	return (
 		<div className={styles.mainPageFilterWrapper}>
-			<h3 className={styles.mainPageFilterMyOrderTitle}>Ваш запрос</h3>
-			<div className={styles.mainPageFilterWhere}>
-				<PiMapPinLine className={styles.mainPageFilterIcon} />
-				<span>{where}</span>
-			</div>
-			<div className={styles.mainPageFilterWhen}>
-				<LuCalendarSearch className={styles.mainPageFilterIcon} />
-				<span>
-					{when.length <= 2 ? `${when[0]} до ${when[1]}` : 'Любые даты'}
-				</span>
-			</div>
-			<div className={styles.mainPageFilterWho}>
-				<AiOutlineUser className={styles.mainPageFilterIcon} />
-				<span>
-					{whoOld} взр {whoChild > 0 ? `, ${whoChild} дет.` : ''}
-				</span>
-			</div>
-			<div className={styles.inputWrapper}>
-				<CheckBoxMainPage
-					style={{ marginRight: '11px' }}
-					onChange={e => dispatch(setAnotherSpot(e.checked))}
-					checked={anotherSpot}
-				/>
-				<span className={styles.mainPageFilterWithAnotherPlace}>
-					Показывать с доп. местом
-				</span>
+			<MyOrder />
+			<div className={styles.priceFilter}>
+				<h3 className={styles.priceFilterTitle}>Цена</h3>
+				<div className={classes.root}>
+					<Slider
+						value={value}
+						onChange={handleChange}
+						valueLabelDisplay='auto'
+						aria-labelledby='range-slider'
+						getAriaValueText={valuetext}
+						min={0}
+						max={10000}
+					/>
+				</div>
+				<div className={styles.priceFilterResult}>
+					<div className={styles.priceFilterResultItem}>
+						<span>от</span>
+						<div>{value[0]}</div>
+					</div>
+					<div className={styles.priceFilterResultItem}>
+						<span>от</span>
+						<div>{value[1]}</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	)

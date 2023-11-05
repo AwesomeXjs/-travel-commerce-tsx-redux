@@ -10,7 +10,33 @@
 	margin-top: 26px;
 	color: black;
 }
-.mainPageFilterMyOrderTitle {
+
+.sliderPrice {
+	background-color: black;
+	width: 100px;
+	height: 100px;
+}
+.priceFilterResult {
+	display: flex;
+	align-items: center;
+	border: 1px solid #c2c2c2;
+	border-radius: 10px;
+	max-width: 300px;
+}
+.priceFilterResultItem {
+	padding: 10px 20px;
+	width: 50%;
+	& > span {
+		color: #c2c2c2;
+	}
+	& > div {
+		font-size: 20px;
+	}
+}
+.priceFilterResultItem:first-child {
+	border-right: 1px solid #c2c2c2;
+}
+.priceFilterTitle {
 	background-color: $accentBlue;
 	display: inline-block;
 	padding: 5px 10px;
@@ -19,39 +45,4 @@
 	font-weight: normal;
 	margin-bottom: 20px;
 	font-size: 23px;
-}
-
-.mainPageFilterWhere,
-.mainPageFilterWhen,
-.mainPageFilterWho {
-	margin-bottom: 15px;
-	& > span {
-		font-weight: bold;
-		font-size: 20px;
-	}
-}
-
-.mainPageFilterIcon {
-	color: $accentGreen;
-	margin-right: 18px;
-}
-
-.inputWrapper {
-	display: flex;
-	align-items: center;
-}
-
-.mainPageFilterCheckboxAnotherSpot {
-	width: 20px;
-	height: 20px;
-	background-color: #f9f9f9;
-	color: $accentBlue;
-	border: 2px solid #edeff2;
-	border-radius: 5px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.mainPageFilterWithAnotherPlace {
-	font-size: 20px;
 }

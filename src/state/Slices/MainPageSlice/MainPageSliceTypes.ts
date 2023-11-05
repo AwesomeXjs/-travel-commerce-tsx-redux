@@ -17,6 +17,7 @@ export interface InitialStateType {
 	date: string[] | string
 	//MAIN PAGE FILTER INPUTS
 	anotherSpot: boolean
+	rangePrice: number[]
 	/* 	hotels: []
 	sanatoriums: []
 	camps: []

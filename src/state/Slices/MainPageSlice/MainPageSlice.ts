@@ -24,6 +24,7 @@ const initialState: InitialStateType = {
 	date: 'Любые даты',
 	//MAIN PAGE FILTER INPUTS
 	anotherSpot: false,
+	rangePrice: [20, 37],
 }
 
 export const mainPageSlice = createSlice({
@@ -75,6 +76,9 @@ export const mainPageSlice = createSlice({
 		setAnotherSpot: (state, action: PayloadAction<any>) => {
 			state.anotherSpot = action.payload
 		},
+		setRangePrice: (state, action: PayloadAction<number[]>) => {
+			state.rangePrice = action.payload
+		},
 	},
 })
 
@@ -104,6 +108,7 @@ export const selectCalendarWindowOpen = (state: RootType) =>
 export const selectBackgroundOpacity = (state: RootType) =>
 	state.mainPage.backgroundOpacity
 export const selectAnotherSpot = (state: RootType) => state.mainPage.anotherSpot
+export const selectRangePrice = (state: RootType) => state.mainPage.rangePrice
 
 //actions
 export const {
@@ -122,4 +127,5 @@ export const {
 	setCalendarWindowOpen,
 	setBackgroundOpacity,
 	setAnotherSpot,
+	setRangePrice,
 } = mainPageSlice.actions
