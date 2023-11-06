@@ -10,39 +10,3 @@
 	margin-top: 26px;
 	color: black;
 }
-
-.sliderPrice {
-	background-color: black;
-	width: 100px;
-	height: 100px;
-}
-.priceFilterResult {
-	display: flex;
-	align-items: center;
-	border: 1px solid #c2c2c2;
-	border-radius: 10px;
-	max-width: 300px;
-}
-.priceFilterResultItem {
-	padding: 10px 20px;
-	width: 50%;
-	& > span {
-		color: #c2c2c2;
-	}
-	& > div {
-		font-size: 20px;
-	}
-}
-.priceFilterResultItem:first-child {
-	border-right: 1px solid #c2c2c2;
-}
-.priceFilterTitle {
-	background-color: $accentBlue;
-	display: inline-block;
-	padding: 5px 10px;
-	color: white;
-	border-radius: 6px;
-	font-weight: normal;
-	margin-bottom: 20px;
-	font-size: 23px;
-}

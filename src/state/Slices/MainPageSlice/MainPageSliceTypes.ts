@@ -16,11 +16,37 @@ export interface InitialStateType {
 	calendarWindowOpen: boolean
 	date: string[] | string
 	//MAIN PAGE FILTER INPUTS
-	anotherSpot: boolean
-	rangePrice: number[]
-	/* 	hotels: []
-	sanatoriums: []
-	camps: []
-	hotSprings: []
-	tours: [] */
+	mainPageFilterInputs: {
+		anotherSpot: boolean
+		rangePrice: number[]
+		//additionaly checkboxes
+		pool: boolean
+		animators: boolean
+		training: boolean
+		powerForCars: boolean
+		//eat checkboxes
+		allIncludes: boolean
+		onlyBreakfast: boolean
+		breakfastAndDinner: boolean
+		thirdEat: boolean
+		withoutEat: boolean
+		//rating checkboxes
+		dontCareRating: boolean
+		threeAndMore: boolean
+		threeAndFiveAndMore: boolean
+		fourAndMore: boolean
+		fourAndFiveAndMore: boolean
+		//place checkboxes
+		dontCarePlace: boolean
+		hotels: boolean
+		base: boolean
+		hostels: boolean
+		cottages: boolean
+		//rooms checkboxes
+		dontCareRooms: boolean
+		oneAndMoreRooms: boolean
+		twoAndMoreRooms: boolean
+		threeAndMoreRooms: boolean
+		fiveAndMoreRooms: boolean
+	}
 }

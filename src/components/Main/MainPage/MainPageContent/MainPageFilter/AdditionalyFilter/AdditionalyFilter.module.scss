@@ -1,0 +1,13 @@
+@import '../../../../../../scss/variables';
+
+.additionalyFilterItem {
+	display: flex;
+	font-size: 20px;
+	align-items: center;
+}
+
+.additionallyFilter {
+	margin-bottom: 30px;
+	border-bottom: 2px dashed #848f96;
+	padding-bottom: 30px;
+}

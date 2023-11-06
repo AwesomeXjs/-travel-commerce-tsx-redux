@@ -1,0 +1,11 @@
+@import '../../../../../../scss/variables';
+.PlaceFilterItem {
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+}
+.PlaceFilter {
+	margin-bottom: 30px;
+	border-bottom: 2px dashed #848f96;
+	padding-bottom: 30px;
+}

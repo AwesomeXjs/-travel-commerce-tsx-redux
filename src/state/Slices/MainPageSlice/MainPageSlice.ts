@@ -23,8 +23,39 @@ const initialState: InitialStateType = {
 	whoWindowOpen: false,
 	date: 'Любые даты',
 	//MAIN PAGE FILTER INPUTS
-	anotherSpot: false,
-	rangePrice: [20, 37],
+	mainPageFilterInputs: {
+		anotherSpot: false,
+		rangePrice: [20, 37],
+		//additionaly checkboxes
+		pool: false,
+		animators: false,
+		training: false,
+		powerForCars: false,
+		//eat checkboxes
+		allIncludes: false,
+		onlyBreakfast: false,
+		breakfastAndDinner: false,
+		thirdEat: false,
+		withoutEat: false,
+		//rating:
+		dontCareRating: false,
+		threeAndMore: false,
+		threeAndFiveAndMore: false,
+		fourAndMore: false,
+		fourAndFiveAndMore: false,
+		//place
+		dontCarePlace: false,
+		hotels: false,
+		base: false,
+		hostels: false,
+		cottages: false,
+		//rooms
+		dontCareRooms: false,
+		oneAndMoreRooms: false,
+		twoAndMoreRooms: false,
+		threeAndMoreRooms: false,
+		fiveAndMoreRooms: false,
+	},
 }
 
 export const mainPageSlice = createSlice({
@@ -74,10 +105,90 @@ export const mainPageSlice = createSlice({
 			state.backgroundOpacity = action.payload
 		},
 		setAnotherSpot: (state, action: PayloadAction<any>) => {
-			state.anotherSpot = action.payload
+			state.mainPageFilterInputs.anotherSpot = action.payload
 		},
 		setRangePrice: (state, action: PayloadAction<number[]>) => {
-			state.rangePrice = action.payload
+			state.mainPageFilterInputs.rangePrice = action.payload
+		},
+		setPool: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.pool = action.payload
+		},
+		setAnimators: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.animators = action.payload
+		},
+		setTraining: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.training = action.payload
+		},
+		setPowerForCars: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.powerForCars = action.payload
+		},
+		setAllIncludes: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.allIncludes = action.payload
+		},
+		setOnlyBreakfast: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.onlyBreakfast = action.payload
+		},
+		setBreakfastAndDinner: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.breakfastAndDinner = action.payload
+		},
+		setThirdEat: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.thirdEat = action.payload
+		},
+		setWithoutEat: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.withoutEat = action.payload
+		},
+		//rating filter
+		setDontCareRating: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.dontCareRating = action.payload
+		},
+		setThreeAndMore: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.threeAndMore = action.payload
+		},
+		setThreeAndFiveAndMore: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.threeAndFiveAndMore = action.payload
+		},
+		setFourAndMore: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.fourAndMore = action.payload
+		},
+		setFourAndFiveAndMore: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.fourAndFiveAndMore = action.payload
+		},
+
+		//place filter
+		setDontCarePlace: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.dontCarePlace = action.payload
+		},
+		setHotels: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.hotels = action.payload
+		},
+		setBase: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.base = action.payload
+		},
+		setHostels: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.hostels = action.payload
+		},
+		setCottages: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.cottages = action.payload
+		},
+		//rooms
+		setDontCareRooms: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.dontCareRooms = action.payload
+		},
+		setOneAndMoreRooms: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.oneAndMoreRooms = action.payload
+		},
+		setTwoAndMoreRooms: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.twoAndMoreRooms = action.payload
+		},
+		setThreeAndMoreRooms: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.threeAndMoreRooms = action.payload
+		},
+		setFiveAndMoreRooms: (state, action: PayloadAction<boolean>) => {
+			state.mainPageFilterInputs.fiveAndMoreRooms = action.payload
+		},
+		//resetFilter
+		setResetAllFilters: (state, action: PayloadAction) => {
+			state.mainPageFilterInputs = initialState.mainPageFilterInputs
 		},
 	},
 })
@@ -107,8 +218,6 @@ export const selectCalendarWindowOpen = (state: RootType) =>
 	state.mainPage.calendarWindowOpen
 export const selectBackgroundOpacity = (state: RootType) =>
 	state.mainPage.backgroundOpacity
-export const selectAnotherSpot = (state: RootType) => state.mainPage.anotherSpot
-export const selectRangePrice = (state: RootType) => state.mainPage.rangePrice
 
 //actions
 export const {
@@ -128,4 +237,36 @@ export const {
 	setBackgroundOpacity,
 	setAnotherSpot,
 	setRangePrice,
+	//additionaly filter
+	setPool,
+	setAnimators,
+	setTraining,
+	setPowerForCars,
+
+	//eat filter
+	setAllIncludes,
+	setOnlyBreakfast,
+	setBreakfastAndDinner,
+	setThirdEat,
+	setWithoutEat,
+	//rating filter
+	setDontCareRating,
+	setThreeAndMore,
+	setThreeAndFiveAndMore,
+	setFourAndMore,
+	setFourAndFiveAndMore,
+	//place filter
+	setDontCarePlace,
+	setHotels,
+	setBase,
+	setHostels,
+	setCottages,
+	//rooms filter
+	setDontCareRooms,
+	setOneAndMoreRooms,
+	setTwoAndMoreRooms,
+	setThreeAndMoreRooms,
+	setFiveAndMoreRooms,
+	//resetAllFilters
+	setResetAllFilters,
 } = mainPageSlice.actions

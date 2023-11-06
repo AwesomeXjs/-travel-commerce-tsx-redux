@@ -6,7 +6,6 @@ import { AiOutlineUser } from 'react-icons/ai'
 import CheckBoxMainPage from '../../../../../../custom/UI/CheckBoxMainPage/CheckBoxMainPage'
 import { useAppDispatch, useAppSelector } from '../../../../../../custom/hooks'
 import {
-	selectAnotherSpot,
 	selectDate,
 	selectWhere,
 	selectWho,
@@ -14,17 +13,20 @@ import {
 	setAnotherSpot,
 } from '../../../../../../state/Slices/MainPageSlice/MainPageSlice'
 
-const MyOrder: FC = () => {
+export interface MyOrderProps {
+	anotherSpot: boolean
+}
+
+const MyOrder: FC<MyOrderProps> = ({ anotherSpot }) => {
 	const where = useAppSelector(selectWhere)
 	const when = useAppSelector(selectDate)
 	const whoOld = useAppSelector(selectWho)
 	const whoChild = useAppSelector(selectWhoChildren)
 
 	const dispatch = useAppDispatch()
-	const anotherSpot = useAppSelector(selectAnotherSpot)
 	return (
 		<div className={styles.myOrderWrapper}>
-			<h3 className={styles.mainPageFilterMyOrderTitle}>Ваш запрос</h3>
+			<h3 className={'mainPageFilterTitles'}>Ваш запрос</h3>
 			<div className={styles.mainPageFilterWhere}>
 				<PiMapPinLine className={styles.mainPageFilterIcon} />
 				<span>{where}</span>
@@ -43,7 +45,6 @@ const MyOrder: FC = () => {
 			</div>
 			<div className={styles.inputWrapper}>
 				<CheckBoxMainPage
-					style={{ marginRight: '11px' }}
 					onChange={e => dispatch(setAnotherSpot(e.checked))}
 					checked={anotherSpot}
 				/>

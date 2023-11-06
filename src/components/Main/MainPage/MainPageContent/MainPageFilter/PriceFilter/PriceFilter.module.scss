@@ -1,0 +1,32 @@
+@import '../../../../../../scss/variables';
+
+.sliderPrice {
+	background-color: black;
+	width: 100px;
+	height: 100px;
+}
+.priceFilter {
+	border-bottom: 2px dashed #848f96;
+	margin-bottom: 30px;
+}
+.priceFilterResult {
+	display: flex;
+	align-items: center;
+	border: 1px solid #c2c2c2;
+	border-radius: 10px;
+	max-width: 300px;
+	margin-bottom: 30px;
+}
+.priceFilterResultItem {
+	padding: 10px 20px;
+	width: 50%;
+	& > span {
+		color: #c2c2c2;
+	}
+	& > div {
+		font-size: 20px;
+	}
+}
+.priceFilterResultItem:first-child {
+	border-right: 1px solid #c2c2c2;
+}
