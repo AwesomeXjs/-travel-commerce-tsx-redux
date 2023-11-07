@@ -1,4 +1,4 @@
-import { HotelType } from './DataTypes'
+import { HotelType } from '../../../types/DataTypes'
 
 export interface InitialStateType {
 	//Data

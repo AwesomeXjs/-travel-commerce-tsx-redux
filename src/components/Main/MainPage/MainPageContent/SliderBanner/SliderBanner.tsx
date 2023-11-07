@@ -1,9 +1,11 @@
 import Slider from 'react-slick'
+import { v4 as uuidv4 } from 'uuid'
 
 import styles from './SliderBanner.module.scss'
 import { initialSlides } from '../../../../Data/SliderSlides'
 import { setSliderState } from '../../../../../state/Slices/MainPageSlice/MainPageSlice'
 import { useAppDispatch, useAppSelector } from '../../../../../custom/hooks'
+import { useEffect } from 'react'
 
 const SliderBanner = () => {
 	const sliderSlides = useAppSelector(
@@ -21,14 +23,16 @@ const SliderBanner = () => {
 		slidesToScroll: 1,
 		cssEase: 'linear',
 	}
+	useEffect(() => {
+		dispatch(setSliderState(initialSlides))
+	}, [dispatch])
 
-	dispatch(setSliderState(initialSlides))
 	return (
 		<div className={styles.sliderWrapper}>
 			<Slider {...settings}>
 				{sliderSlides.map(el => {
 					return (
-						<div className={styles.sliderItem}>
+						<div key={uuidv4()} className={styles.sliderItem}>
 							<img src={el} alt='slide' />
 						</div>
 					)

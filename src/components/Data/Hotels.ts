@@ -1,10 +1,12 @@
-import { HotelType } from '../../state/Slices/MainPageSlice/DataTypes'
+import { HotelType } from '../../types/DataTypes'
+import hotelImage from '../../assets/hotelImageMainPage.png'
+import eatIcon from '../../assets/eatIcon.png'
 
 export const hotelsData: HotelType[] = [
 	{
 		title: 'Отель Каравансарай',
 		discription:
-			'Отель «Казахстан Экспресс» расположен в Алматы, в 300 м от Дворца Республики. К услугам гостей номера с террасой, бесплатная частная парковка, ресторан и бар. Из каждого номера 3-звездочного отеля открывается вид на город. Гости могут посещать сауну и хаммам. К услугам гостей круглосуточная стойка регистрации, трансфер от/до аэропорта, доставка еды и напитков в номер и бесплатный Wi-Fi на всей территории.',
+			'Lorem ipsum dolor sit amet, id dicant splendide cum. Loremipsum dolor sit amet, id dicant splendide cum. Lorem ipsumdolor sit amet, id dicant splendide cum. Lorem ipsum dolorsit amet, id dicant splendide cum.',
 		moreDescription:
 			'Отель предоставляет гостям номера с кондиционером, письменным столом, чайником, сейфом, телевизором и собственной ванной комнатой с душем. Во всех номерах отеля «Казахстан Экспресс» имеется постельное белье и полотенца.Каждое утро в отеле сервируется завтрак «шведский стол», континентальный или американский завтрак.В отеле есть парикмахерская и бизнес-центр.Рядом с отелем находятся такие популярные достопримечательности, как парк Гвардейцев-Панфиловцев, Вознесенский собор и Монумент независимости Казахстана. Расстояние от отеля «Казахстан Экспресс» до ближайшего международного аэропорта Алматы составляет 15 км.Парам особенно нравится расположение — они оценили его на 9,5 за поездку вдвоем',
 		location: {
@@ -12,29 +14,27 @@ export const hotelsData: HotelType[] = [
 			country: 'Казахстан',
 		},
 
-		startDate: '27.07',
-		endDate: '30.07',
 		pricePerPerson: 10000,
 		pricePerPersonChildren: 5000,
-		discount: 23,
+		discount: 0,
 		additional: {
-			pool: true,
-			animators: true,
-			training: false,
-			powerForCars: false,
+			pool: false,
+			animators: false,
+			training: true,
+			powerForCars: true,
 		},
 
 		eat: {
 			allIncludesEat: false,
-			dinner: true,
+			breakfast: false,
 			dinnerAndBreakfast: false,
 			thirdEat: false,
-			withoutEat: false,
+			withoutEat: true,
 			eatPrice: 5000,
 			eatPriceForChildren: 3000,
 		},
 		place: 'hotel',
-		rating: 4.5,
+		rating: 3.5,
 		rooms: [
 			{
 				title: 'Люкс 4-х местный',
@@ -57,11 +57,13 @@ export const hotelsData: HotelType[] = [
 			},
 		],
 		ps: 'Дополнительные примечания. Отображать только если они есть',
+		image: hotelImage,
+		eatIcon,
 	},
 	{
 		title: 'Отель Каравансарай',
 		discription:
-			'Отель «Казахстан Экспресс» расположен в Алматы, в 300 м от Дворца Республики. К услугам гостей номера с террасой, бесплатная частная парковка, ресторан и бар. Из каждого номера 3-звездочного отеля открывается вид на город. Гости могут посещать сауну и хаммам. К услугам гостей круглосуточная стойка регистрации, трансфер от/до аэропорта, доставка еды и напитков в номер и бесплатный Wi-Fi на всей территории.',
+			'Lorem ipsum dolor sit amet, id dicant splendide cum. Loremipsum dolor sit amet, id dicant splendide cum. Lorem ipsumdolor sit amet, id dicant splendide cum. Lorem ipsum dolorsit amet, id dicant splendide cum.',
 		moreDescription:
 			'Отель предоставляет гостям номера с кондиционером, письменным столом, чайником, сейфом, телевизором и собственной ванной комнатой с душем. Во всех номерах отеля «Казахстан Экспресс» имеется постельное белье и полотенца.Каждое утро в отеле сервируется завтрак «шведский стол», континентальный или американский завтрак.В отеле есть парикмахерская и бизнес-центр.Рядом с отелем находятся такие популярные достопримечательности, как парк Гвардейцев-Панфиловцев, Вознесенский собор и Монумент независимости Казахстана. Расстояние от отеля «Казахстан Экспресс» до ближайшего международного аэропорта Алматы составляет 15 км.Парам особенно нравится расположение — они оценили его на 9,5 за поездку вдвоем',
 		location: {
@@ -69,8 +71,6 @@ export const hotelsData: HotelType[] = [
 			country: 'Казахстан',
 		},
 
-		startDate: '27.07',
-		endDate: '30.07',
 		pricePerPerson: 10000,
 		pricePerPersonChildren: 5000,
 		discount: 23,
@@ -83,7 +83,7 @@ export const hotelsData: HotelType[] = [
 
 		eat: {
 			allIncludesEat: false,
-			dinner: true,
+			breakfast: true,
 			dinnerAndBreakfast: false,
 			thirdEat: false,
 			withoutEat: false,
@@ -114,11 +114,13 @@ export const hotelsData: HotelType[] = [
 			},
 		],
 		ps: 'Дополнительные примечания. Отображать только если они есть',
+		image: hotelImage,
+		eatIcon,
 	},
 	{
 		title: 'Отель Каравансарай',
 		discription:
-			'Отель «Казахстан Экспресс» расположен в Алматы, в 300 м от Дворца Республики. К услугам гостей номера с террасой, бесплатная частная парковка, ресторан и бар. Из каждого номера 3-звездочного отеля открывается вид на город. Гости могут посещать сауну и хаммам. К услугам гостей круглосуточная стойка регистрации, трансфер от/до аэропорта, доставка еды и напитков в номер и бесплатный Wi-Fi на всей территории.',
+			'Lorem ipsum dolor sit amet, id dicant splendide cum. Loremipsum dolor sit amet, id dicant splendide cum. Lorem ipsumdolor sit amet, id dicant splendide cum. Lorem ipsum dolorsit amet, id dicant splendide cum.',
 		moreDescription:
 			'Отель предоставляет гостям номера с кондиционером, письменным столом, чайником, сейфом, телевизором и собственной ванной комнатой с душем. Во всех номерах отеля «Казахстан Экспресс» имеется постельное белье и полотенца.Каждое утро в отеле сервируется завтрак «шведский стол», континентальный или американский завтрак.В отеле есть парикмахерская и бизнес-центр.Рядом с отелем находятся такие популярные достопримечательности, как парк Гвардейцев-Панфиловцев, Вознесенский собор и Монумент независимости Казахстана. Расстояние от отеля «Казахстан Экспресс» до ближайшего международного аэропорта Алматы составляет 15 км.Парам особенно нравится расположение — они оценили его на 9,5 за поездку вдвоем',
 		location: {
@@ -126,8 +128,6 @@ export const hotelsData: HotelType[] = [
 			country: 'Казахстан',
 		},
 
-		startDate: '27.07',
-		endDate: '30.07',
 		pricePerPerson: 10000,
 		pricePerPersonChildren: 5000,
 		discount: 23,
@@ -140,7 +140,7 @@ export const hotelsData: HotelType[] = [
 
 		eat: {
 			allIncludesEat: false,
-			dinner: true,
+			breakfast: true,
 			dinnerAndBreakfast: false,
 			thirdEat: false,
 			withoutEat: false,
@@ -171,11 +171,13 @@ export const hotelsData: HotelType[] = [
 			},
 		],
 		ps: 'Дополнительные примечания. Отображать только если они есть',
+		image: hotelImage,
+		eatIcon,
 	},
 	{
 		title: 'Отель Каравансарай',
 		discription:
-			'Отель «Казахстан Экспресс» расположен в Алматы, в 300 м от Дворца Республики. К услугам гостей номера с террасой, бесплатная частная парковка, ресторан и бар. Из каждого номера 3-звездочного отеля открывается вид на город. Гости могут посещать сауну и хаммам. К услугам гостей круглосуточная стойка регистрации, трансфер от/до аэропорта, доставка еды и напитков в номер и бесплатный Wi-Fi на всей территории.',
+			'Lorem ipsum dolor sit amet, id dicant splendide cum. Loremipsum dolor sit amet, id dicant splendide cum. Lorem ipsumdolor sit amet, id dicant splendide cum. Lorem ipsum dolorsit amet, id dicant splendide cum.',
 		moreDescription:
 			'Отель предоставляет гостям номера с кондиционером, письменным столом, чайником, сейфом, телевизором и собственной ванной комнатой с душем. Во всех номерах отеля «Казахстан Экспресс» имеется постельное белье и полотенца.Каждое утро в отеле сервируется завтрак «шведский стол», континентальный или американский завтрак.В отеле есть парикмахерская и бизнес-центр.Рядом с отелем находятся такие популярные достопримечательности, как парк Гвардейцев-Панфиловцев, Вознесенский собор и Монумент независимости Казахстана. Расстояние от отеля «Казахстан Экспресс» до ближайшего международного аэропорта Алматы составляет 15 км.Парам особенно нравится расположение — они оценили его на 9,5 за поездку вдвоем',
 		location: {
@@ -183,8 +185,6 @@ export const hotelsData: HotelType[] = [
 			country: 'Казахстан',
 		},
 
-		startDate: '27.07',
-		endDate: '30.07',
 		pricePerPerson: 10000,
 		pricePerPersonChildren: 5000,
 		discount: 23,
@@ -197,7 +197,7 @@ export const hotelsData: HotelType[] = [
 
 		eat: {
 			allIncludesEat: false,
-			dinner: true,
+			breakfast: true,
 			dinnerAndBreakfast: false,
 			thirdEat: false,
 			withoutEat: false,
@@ -228,5 +228,7 @@ export const hotelsData: HotelType[] = [
 			},
 		],
 		ps: 'Дополнительные примечания. Отображать только если они есть',
+		image: hotelImage,
+		eatIcon,
 	},
 ]

@@ -11,7 +11,7 @@ import { PiSortAscendingBold, PiSortDescendingBold } from 'react-icons/pi'
 
 const HeaderDataListSortButton: FC = () => {
 	const dispatch = useAppDispatch()
-	const { sortVariantIsOpen, sortVariants } = useAppSelector(
+	const { sortVariantIsOpen, sortVariants, initialDataState } = useAppSelector(
 		state => state.mainPage
 	)
 	const refHideSortWindow = useRef(null)
@@ -32,7 +32,9 @@ const HeaderDataListSortButton: FC = () => {
 		<div className={styles.headerListAndSort}>
 			<div className={styles.headerList}>
 				<span className={styles.headerListTitle}>Найдено:</span>
-				<span className={styles.headerListQty}>20 вариантов</span>
+				<span className={styles.headerListQty}>
+					{initialDataState.length} вариантов
+				</span>
 			</div>
 			<div className={styles.sortButtonWrapper}>
 				<CustomButton

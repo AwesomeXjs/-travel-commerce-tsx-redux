@@ -1,5 +1,5 @@
 import defaultSlideAirPlane from '../../assets/sliderSlide.png'
-import { initialSlidesType } from '../../state/Slices/MainPageSlice/DataTypes'
+import { initialSlidesType } from '../../types/DataTypes'
 
 export const initialSlides: initialSlidesType = [
 	defaultSlideAirPlane,

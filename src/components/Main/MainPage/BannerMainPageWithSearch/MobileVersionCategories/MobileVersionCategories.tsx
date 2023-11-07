@@ -1,7 +1,8 @@
 import { FC } from 'react'
+import { v4 as uuidv4 } from 'uuid'
+
 import styles from './MobileVersionCategories.module.scss'
 import Slider from 'react-slick'
-
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { arrayCategories } from '../Categories/CategoryArray'
@@ -34,7 +35,7 @@ const MobileVersionCategories: FC = () => {
 		<div className={styles.slider}>
 			<Slider {...settings}>
 				{arrayCategories.map(e => (
-					<CategoryItem dataStatus={dataStatus} e={e} />
+					<CategoryItem key={uuidv4()} dataStatus={dataStatus} e={e} />
 				))}
 			</Slider>
 		</div>

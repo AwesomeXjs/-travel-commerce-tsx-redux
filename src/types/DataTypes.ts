@@ -9,8 +9,6 @@ export type HotelType = {
 		country: string
 	}
 
-	startDate: string
-	endDate: string
 	pricePerPerson: number
 	pricePerPersonChildren: number
 	discount: number
@@ -23,7 +21,7 @@ export type HotelType = {
 
 	eat: {
 		allIncludesEat: boolean
-		dinner: boolean
+		breakfast: boolean
 		dinnerAndBreakfast: boolean
 		thirdEat: boolean
 		withoutEat: boolean
@@ -52,4 +50,6 @@ export type HotelType = {
 		}
 	]
 	ps: string
+	image: any
+	eatIcon: any
 }

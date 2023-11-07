@@ -1,8 +1,9 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 import { RootType } from '../../store'
+
+import { HotelType } from '../../../types/DataTypes'
 import { InitialStateType } from './MainPageSliceTypes'
-import { HotelType } from './DataTypes'
 
 const initialState: InitialStateType = {
 	//DATA
