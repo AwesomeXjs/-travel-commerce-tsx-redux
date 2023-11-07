@@ -10,6 +10,7 @@ export interface CustomButtonProps extends HTMLAttributes<HTMLButtonElement> {
 		| 'orange'
 		| 'backWhiteBorderBlue'
 		| 'accentBlueButton'
+		| 'backWhiteBorderBlueForSort'
 	onClick?: (e: any) => void
 }
 
@@ -32,6 +33,9 @@ const CustomButton: FC<CustomButtonProps> = ({ ...props }) => {
 			break
 		case 'accentBlueButton':
 			buttonStyle = `${styles.custonButtonStyle} ${styles.backWhiteBorderBlue}`
+			break
+		case 'backWhiteBorderBlueForSort':
+			buttonStyle = `${styles.custonButtonStyle} ${styles.backWhiteBorderBlueForSort}`
 			break
 		default:
 			break

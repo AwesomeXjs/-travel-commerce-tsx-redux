@@ -70,7 +70,8 @@
 		color: $accentYellow;
 	}
 }
-.backWhiteBorderBlue {
+.backWhiteBorderBlue,
+.backWhiteBorderBlueForSort {
 	color: $accentBlue;
 	background-color: white;
 	border: 2px solid $accentBlue;
@@ -80,6 +81,14 @@
 	&:hover {
 		color: white;
 	}
+}
+.backWhiteBorderBlueForSort {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	padding: 16px 28px;
+	min-width: 283px;
 }
 .accentBlueButton {
 	color: white;

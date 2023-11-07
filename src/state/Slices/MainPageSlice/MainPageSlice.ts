@@ -2,8 +2,11 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 import { RootType } from '../../store'
 import { InitialStateType } from './MainPageSliceTypes'
+import { HotelType } from './DataTypes'
 
 const initialState: InitialStateType = {
+	//DATA
+	initialDataState: [],
 	//header state
 	menuStatus: false,
 	language: 'RU',
@@ -56,12 +59,21 @@ const initialState: InitialStateType = {
 		threeAndMoreRooms: false,
 		fiveAndMoreRooms: false,
 	},
+	//Slider state
+	sliderInitialState: [],
+	//sort button
+	sortVariantIsOpen: false,
+	sortVariants: 'Сортировать',
 }
 
 export const mainPageSlice = createSlice({
 	name: 'mainPage',
 	initialState,
 	reducers: {
+		//DATA
+		setDataState: (state, action: PayloadAction<HotelType[]>) => {
+			state.initialDataState = action.payload
+		},
 		setLanguage: (state, action: PayloadAction<'RU' | 'EN' | 'KAZ'>) => {
 			state.language = action.payload
 		},
@@ -190,6 +202,25 @@ export const mainPageSlice = createSlice({
 		setResetAllFilters: (state, action: PayloadAction) => {
 			state.mainPageFilterInputs = initialState.mainPageFilterInputs
 		},
+		setSliderState: (state, action: PayloadAction<string[]>) => {
+			state.sliderInitialState = action.payload
+		},
+		//sort button
+		setSortVariantIsOpen: (state, action: PayloadAction<boolean>) => {
+			state.sortVariantIsOpen = action.payload
+		},
+		setSortVariants: (
+			state,
+			action: PayloadAction<
+				| 'Сортировать'
+				| 'Сначала дорогие'
+				| 'Сначала дешевые'
+				| 'По рейтингу'
+				| 'Любой'
+			>
+		) => {
+			state.sortVariants = action.payload
+		},
 	},
 })
 
@@ -221,6 +252,9 @@ export const selectBackgroundOpacity = (state: RootType) =>
 
 //actions
 export const {
+	//DATA
+	setDataState,
+	///
 	setLanguage,
 	setGlobalSearch,
 	setMenuStatus,
@@ -269,4 +303,9 @@ export const {
 	setFiveAndMoreRooms,
 	//resetAllFilters
 	setResetAllFilters,
+	//Slider
+	setSliderState,
+	//sort button
+	setSortVariantIsOpen,
+	setSortVariants,
 } = mainPageSlice.actions

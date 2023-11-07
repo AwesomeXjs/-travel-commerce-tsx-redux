@@ -3,7 +3,132 @@
 .mainPageContentWrapper {
 	display: flex;
 	justify-content: space-between;
+	background-color: #ecf0f5;
 }
 .mainPageDataWrapper {
-	width: 67%;
+	width: 72%;
+	padding: 26px 40px;
+	background-color: white;
+}
+
+//ITEM STYLES
+.itemWrapper {
+	display: flex;
+	align-items: center;
+	padding: 33px 20px;
+	border-radius: $radius;
+	max-height: 315px;
+	margin-bottom: 21px;
+	-webkit-box-shadow: 0px 2px 24px 16px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 0px 2px 24px 16px rgba(34, 60, 80, 0.2);
+	box-shadow: 0px 2px 24px 16px rgba(34, 60, 80, 0.2);
+}
+
+.itemImageWrapper {
+	max-width: 288px;
+	margin-right: 15px;
+}
+.hotelImage {
+	border-radius: 10px;
+}
+.itemContentTitle {
+	font-size: 23px;
+	color: $accentBlue;
+	font-weight: bold;
+	line-height: 1;
+}
+.itemContentWrapper {
+	max-width: 600px;
+}
+.itemContentPlace {
+	color: #51555b;
+	font-size: 17px;
+}
+.itemContentRating {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+}
+.itemContentRatingValue {
+	background-color: $accentGreen;
+	display: inline;
+	border-radius: 5px;
+	padding: 5px 10px;
+	color: $special-text;
+}
+.itemContentEat {
+	display: flex;
+	align-items: center;
+	margin-bottom: 12px;
+	& > img {
+		max-width: 23px;
+		margin-right: 10px;
+	}
+}
+.itemContentDescription {
+	line-height: 1.1;
+	margin-bottom: 10px;
+}
+.itemContentAdditional {
+	display: flex;
+}
+.itemContentAdditionalItem {
+	padding: 9px 15px;
+	margin-right: 10px;
+	background-color: #65a0fe18;
+	border-radius: 10px;
+	color: $accentBlue;
+	font-family: $userfont;
+}
+.hrAirplane {
+	height: 270px;
+}
+.itemPrice {
+	border-bottom: 1px solid #c5c3c3;
+	margin-bottom: 16px;
+}
+.itemPriceWrapper {
+	border: 2px solid #e2dfdf;
+	border-radius: 10px;
+	padding: 10px;
+	width: 100%;
+	max-width: 280px;
+}
+.itemPriceDefault {
+	color: #848f968e;
+	text-decoration: line-through;
+	line-height: 1;
+}
+.itemPriceFinaly {
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 1.4;
+	& > span {
+		font-size: 20px;
+	}
+}
+.itemPricePersons {
+	font-size: 17px;
+	font-weight: normal;
+	color: #848f96;
+	margin-bottom: 16px;
+}
+.itemPriceWhen {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.itemPriceHowMuchDayAndNight {
+	margin-bottom: 16px;
+}
+.itemPriceHowMuchDayAndNight,
+.itemPriceDays {
+	display: flex;
+	align-items: center;
+}
+.itemPriceDays {
+	margin-right: 50px;
+}
+.itemPriceIcons {
+	margin-right: 5px;
+	color: $accentBlue;
 }

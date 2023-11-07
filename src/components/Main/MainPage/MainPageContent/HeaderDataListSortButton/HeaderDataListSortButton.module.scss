@@ -1,0 +1,66 @@
+@import '../../../../../scss/variables';
+
+.headerListAndSort {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.headerList {
+	display: flex;
+	align-items: center;
+}
+.headerListTitle {
+	font-size: 31px;
+	font-weight: bold;
+	margin-right: 15px;
+}
+.headerListQty {
+	font-size: 26px;
+}
+.sortButtonWrapper {
+	position: relative;
+}
+.sortVariants {
+	position: absolute;
+	top: 110%;
+	width: 100%;
+	background-color: white;
+	border-radius: $radius;
+	border: 2px solid #d4d5d6;
+	animation: sortWindowOpen 0.3s;
+}
+.sortVariantsItem:first-child {
+	border-radius: $radius $radius 0 0;
+}
+.sortVariantsItem:last-child {
+	border-radius: 0 0 $radius $radius;
+}
+.sortVariantsItem {
+	padding: 15px 28px;
+	display: flex;
+	align-items: center;
+	line-height: 1;
+	font-size: 20px;
+	cursor: pointer;
+	color: rgb(141, 139, 139);
+	&:hover {
+		background-color: #eef3fc;
+		color: black;
+	}
+}
+.sortListIcon {
+	margin-right: 13px;
+	min-width: 20px;
+	color: $accentBlue;
+}
+
+@keyframes sortWindowOpen {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

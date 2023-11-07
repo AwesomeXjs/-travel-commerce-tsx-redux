@@ -29,7 +29,7 @@ const MyOrder: FC<MyOrderProps> = ({ anotherSpot }) => {
 			<h3 className={'mainPageFilterTitles'}>Ваш запрос</h3>
 			<div className={styles.mainPageFilterWhere}>
 				<PiMapPinLine className={styles.mainPageFilterIcon} />
-				<span>{where}</span>
+				<span>{where.trim().length > 0 ? where : 'Весь Казахстан'}</span>
 			</div>
 			<div className={styles.mainPageFilterWhen}>
 				<LuCalendarSearch className={styles.mainPageFilterIcon} />

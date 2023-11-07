@@ -1,4 +1,9 @@
+import { HotelType } from './DataTypes'
+
 export interface InitialStateType {
+	//Data
+	initialDataState: HotelType[]
+	////
 	menuStatus: boolean
 	language: 'RU' | 'EN' | 'KAZ'
 	languageStatus: boolean
@@ -49,4 +54,13 @@ export interface InitialStateType {
 		threeAndMoreRooms: boolean
 		fiveAndMoreRooms: boolean
 	}
+	sliderInitialState: string[]
+	//sort button
+	sortVariantIsOpen: boolean
+	sortVariants:
+		| 'Сортировать'
+		| 'Сначала дорогие'
+		| 'Сначала дешевые'
+		| 'По рейтингу'
+		| 'Любой'
 }

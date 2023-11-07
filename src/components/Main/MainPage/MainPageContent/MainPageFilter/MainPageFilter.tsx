@@ -1,18 +1,15 @@
 import { useState } from 'react'
-import styles from './MainPageFilter.module.scss'
+import { useDispatch } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles'
 
 import MyOrder from './MyOrder/MyOrder'
-
+import styles from './MainPageFilter.module.scss'
 import PriceFilter from './PriceFilter/PriceFilter'
 import { useAppSelector } from '../../../../../custom/hooks'
-import { useDispatch } from 'react-redux'
 import AdditionalyFilter from './AdditionalyFilter/AdditionalyFilter'
 import EatFilter from './EatFfilter/EatFilter'
-
 import RatingFilter from './RatingFilter/RatingFilter'
 import PlaceFilter from './PlaceFilter/PlaceFilter'
-
 import RoomsFilter from './RoomsFilter/RoomsFilter'
 import { setResetAllFilters } from '../../../../../state/Slices/MainPageSlice/MainPageSlice'
 import CustomButton from '../../../../../custom/UI/CustomButton/CustomButton'
@@ -42,7 +39,18 @@ const MainPageFilter = () => {
 	const handleChange = (event: any, newValue: number | number[]) => {
 		setValue(newValue as number[])
 	}
-	//Additionaly filter
+
+	//filter
+	/* const filteredBooks = books.filter(book => {
+		const matchesTitles = book.title
+			.toLowerCase()
+			.includes(titleFilter.toLowerCase())
+		const matchesAuthor = book.author
+			.toLowerCase()
+			.includes(authorFilter.toLowerCase())
+		const matchesFavorite = isFavorites ? book.isFavorite : true
+		return matchesTitles && matchesAuthor && matchesFavorite
+	}) */
 
 	const {
 		anotherSpot,
