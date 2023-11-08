@@ -1,9 +1,11 @@
 {
   "files": {
-    "main.css": "/-travel-commerce-tsx-redux/static/css/main.381b5f6c.css",
-    "main.js": "/-travel-commerce-tsx-redux/static/js/main.dae830f0.js",
+    "main.css": "/-travel-commerce-tsx-redux/static/css/main.ffa1e7cb.css",
+    "main.js": "/-travel-commerce-tsx-redux/static/js/main.0babfc9f.js",
     "static/media/maldives.png": "/-travel-commerce-tsx-redux/static/media/maldives.5c0a47d41721ee6ca99c.png",
+    "static/media/sliderSlide.png": "/-travel-commerce-tsx-redux/static/media/sliderSlide.3ec6bdfe601aab799087.png",
     "static/media/ulyDalaBack.png": "/-travel-commerce-tsx-redux/static/media/ulyDalaBack.bda23a3e079eecb6e525.png",
+    "static/media/hotelImageMainPage.png": "/-travel-commerce-tsx-redux/static/media/hotelImageMainPage.7c79ca4e708f4fd835ec.png",
     "static/media/photoGirlTour.png": "/-travel-commerce-tsx-redux/static/media/photoGirlTour.a858b72884295ef55937.png",
     "static/media/logo.png": "/-travel-commerce-tsx-redux/static/media/logo.0e9ad61ec37c31dc5a8d.png",
     "static/media/logoMobile.png": "/-travel-commerce-tsx-redux/static/media/logoMobile.42f59c0519be264649c2.png",
@@ -12,11 +14,11 @@
     "static/media/slick.ttf": "/-travel-commerce-tsx-redux/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/-travel-commerce-tsx-redux/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/-travel-commerce-tsx-redux/index.html",
-    "main.381b5f6c.css.map": "/-travel-commerce-tsx-redux/static/css/main.381b5f6c.css.map",
-    "main.dae830f0.js.map": "/-travel-commerce-tsx-redux/static/js/main.dae830f0.js.map"
+    "main.ffa1e7cb.css.map": "/-travel-commerce-tsx-redux/static/css/main.ffa1e7cb.css.map",
+    "main.0babfc9f.js.map": "/-travel-commerce-tsx-redux/static/js/main.0babfc9f.js.map"
   },
   "entrypoints": [
-    "static/css/main.381b5f6c.css",
-    "static/js/main.dae830f0.js"
+    "static/css/main.ffa1e7cb.css",
+    "static/js/main.0babfc9f.js"
   ]
 }
