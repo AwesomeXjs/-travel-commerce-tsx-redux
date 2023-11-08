@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { makeStyles } from '@material-ui/core/styles'
 
 import MyOrder from './MyOrder/MyOrder'
 import styles from './MainPageFilter.module.scss'
@@ -14,18 +13,11 @@ import RoomsFilter from './RoomsFilter/RoomsFilter'
 import { setResetAllFilters } from '../../../../../state/Slices/MainPageSlice/MainPageSlice'
 import CustomButton from '../../../../../custom/UI/CustomButton/CustomButton'
 
-const useStyles = makeStyles({
-	root: {
-		width: 300,
-	},
-})
-
 function valuetext(value: number) {
 	return `${value}°C`
 }
 
 const MainPageFilter = () => {
-	const classes = useStyles()
 	const dispatch = useDispatch()
 	const filterState = useAppSelector(
 		state => state.mainPage.mainPageFilterInputs
@@ -89,7 +81,6 @@ const MainPageFilter = () => {
 		<div className={styles.mainPageFilterWrapper}>
 			<MyOrder anotherSpot={anotherSpot} />
 			<PriceFilter
-				classes={classes}
 				valuetext={valuetext}
 				value={value}
 				handleChange={handleChange}

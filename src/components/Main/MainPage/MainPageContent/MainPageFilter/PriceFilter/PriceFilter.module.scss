@@ -30,3 +30,46 @@
 .priceFilterResultItem:first-child {
 	border-right: 1px solid #c2c2c2;
 }
+
+.priceSlider {
+	max-width: 300px;
+}
+
+@include hd_plus() {
+	// 1920px --
+}
+
+@include hd() {
+	//1440px --
+	.priceFilterResultItem {
+		padding: 5px 10px;
+		width: 50%;
+		& > span {
+			color: #c2c2c2;
+		}
+		& > div {
+			font-size: 15px;
+		}
+	}
+	.priceFilterResult,
+	.priceFilter {
+		margin-bottom: 20px;
+	}
+}
+
+@include wide() {
+	//1200px --
+}
+
+@include desktop() {
+	// 992px--
+}
+@include tablet() {
+	// 768px--
+}
+@include mobile() {
+	// 568px--
+}
+@include mobile-s() {
+	// 414px--
+}

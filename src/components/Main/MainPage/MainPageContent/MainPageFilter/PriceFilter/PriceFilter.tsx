@@ -2,25 +2,22 @@ import { FC } from 'react'
 import Slider from '@material-ui/core/Slider'
 
 import styles from './PriceFilter.module.scss'
-import { ClassNameMap } from '@material-ui/core/styles/withStyles'
 
 export interface PriceFilterProps {
 	valuetext: (value: number) => string
 	value: number[]
 	handleChange: (event: any, newValue: number | number[]) => void
-	classes: ClassNameMap<'root'>
 }
 
 const PriceFilter: FC<PriceFilterProps> = ({
 	valuetext,
 	value,
 	handleChange,
-	classes,
 }) => {
 	return (
 		<div className={styles.priceFilter}>
 			<h3 className={'mainPageFilterTitles'}>Цена</h3>
-			<div className={classes.root}>
+			<div className={styles.priceSlider}>
 				<Slider
 					value={value}
 					onChange={handleChange}

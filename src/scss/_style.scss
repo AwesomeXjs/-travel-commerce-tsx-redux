@@ -61,6 +61,9 @@ body {
 
 @include hd() {
 	//1440px --
+	.mainPageFilterTitles {
+		font-size: 18px;
+	}
 }
 
 @include wide() {

@@ -10,3 +10,35 @@
 	border-bottom: 2px dashed #848f96;
 	padding-bottom: 30px;
 }
+
+@include hd_plus() {
+	// 1920px --
+}
+
+@include hd() {
+	//1440px --
+	.RatingFilterItem {
+		font-size: 15px;
+	}
+	.RatingFilter {
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+	}
+}
+
+@include wide() {
+	//1200px --
+}
+
+@include desktop() {
+	// 992px--
+}
+@include tablet() {
+	// 768px--
+}
+@include mobile() {
+	// 568px--
+}
+@include mobile-s() {
+	// 414px--
+}
