@@ -28,7 +28,7 @@ const RoomsFilter: FC<RoomsFilterProps> = ({
 	const dispatch = useAppDispatch()
 	return (
 		<div className={styles.RoomsFilter}>
-			<h3 className='mainPageFilterTitles'>Тип размещения</h3>
+			<h3 className='mainPageFilterTitles'>Количество комнат</h3>
 			<div className={styles.RoomsFilterCheckboxes}>
 				<div className={styles.RoomsFilterItem}>
 					<CheckBoxMainPage

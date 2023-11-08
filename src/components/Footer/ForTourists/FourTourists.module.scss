@@ -1,0 +1,24 @@
+@import '../../../scss/variables';
+
+.forTourists {
+	margin-right: 10%;
+}
+.forTouristContent {
+	display: flex;
+}
+.forTouristContentColumn {
+	display: flex;
+	flex-direction: column;
+	padding: 0 26px;
+	border-right: 2px solid #8d939b59;
+}
+.forTouristContentColumn:last-child {
+	border-right: none;
+}
+.forTouristContentColumn:first-child {
+	padding-left: 0px;
+}
+.forTouristTitle {
+	font-size: 23px;
+	margin-bottom: 26px;
+}

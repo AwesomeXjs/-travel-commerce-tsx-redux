@@ -16,6 +16,13 @@ export interface DataItemProps {
 }
 
 const DataItem: FC<DataItemProps> = ({ el, who, whoChildren, date }) => {
+	//цена без скидки
+	const priceWithoutDiscount =
+		el.pricePerPerson * who + whoChildren * el.pricePerPersonChildren
+
+	//цена со скидкой
+	const priceWithDiscount =
+		priceWithoutDiscount - (priceWithoutDiscount / 100) * el.discount
 	return (
 		<div className={styles.itemWrapper}>
 			<div className={styles.itemImageWrapper}>
@@ -85,19 +92,13 @@ const DataItem: FC<DataItemProps> = ({ el, who, whoChildren, date }) => {
 						{!!el.discount ? (
 							<>
 								<span>от </span>
-								{el.pricePerPerson * who +
-									whoChildren * el.pricePerPersonChildren -
-									((el.pricePerPerson * who +
-										whoChildren * el.pricePerPersonChildren) /
-										100) *
-										el.discount}
+								{priceWithDiscount}
 								<span>тг</span>
 							</>
 						) : (
 							<>
 								<span>от </span>
-								{el.pricePerPerson * who +
-									whoChildren * el.pricePerPersonChildren}
+								{priceWithoutDiscount}
 								<span>тг</span>
 							</>
 						)}

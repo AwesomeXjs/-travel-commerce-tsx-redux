@@ -1,0 +1,13 @@
+@import '../../../scss/variables';
+
+//company
+.company {
+	display: flex;
+	flex-direction: column;
+	margin-right: 10%;
+}
+
+.companyTitle {
+	font-size: 23px;
+	margin-bottom: 26px;
+}

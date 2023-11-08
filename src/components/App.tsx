@@ -7,6 +7,7 @@ import {
 	setMenuStatus,
 } from '../state/Slices/MainPageSlice/MainPageSlice'
 import Main from './Main/Main'
+import Footer from './Footer/Footer'
 
 const App: FC = () => {
 	const dispatch = useAppDispatch()
@@ -19,7 +20,7 @@ const App: FC = () => {
 		<>
 			<Header />
 			<Main />
-
+			<Footer />
 			{backGroundVisible && (
 				<div
 					onClick={changeMenuStatusHandler}

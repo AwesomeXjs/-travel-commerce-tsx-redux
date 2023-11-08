@@ -1,0 +1,50 @@
+@import '../../scss/variables';
+
+.footerWrapper {
+	background-color: #292d32;
+	color: white;
+	padding: 26px 62px;
+}
+
+.footerContent {
+	display: flex;
+}
+
+.forTouristContentItem {
+	color: white;
+	position: relative;
+	text-decoration: none;
+	cursor: pointer;
+	line-height: 1;
+	margin-bottom: 15px;
+}
+
+.forTouristContentItem::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	border-radius: 4px;
+	background-color: white;
+	bottom: -3px;
+	left: 0;
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform 0.3s ease-in-out;
+}
+
+.forTouristContentItem:hover::before {
+	transform-origin: left;
+	transform: scaleX(1);
+}
+
+.contacts {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.contactsTitle {
+	font-size: 23px;
+	margin-bottom: 26px;
+}

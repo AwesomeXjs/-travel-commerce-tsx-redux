@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from '../../../../custom/hooks'
 import { setDataState } from '../../../../state/Slices/MainPageSlice/MainPageSlice'
 import { hotelsData } from '../../../Data/Hotels'
 import DataItem from './DataItem/DataItem'
+import CustomButton from '../../../../custom/UI/CustomButton/CustomButton'
 interface MainPageContentProps {}
 
 const MainPageContent: FC<MainPageContentProps> = () => {
@@ -44,22 +45,31 @@ const MainPageContent: FC<MainPageContentProps> = () => {
 						}
 					})}
 					<SliderBanner />
-					{initialDataState.map((el, i) => {
-						if (i > 2) {
-							return (
-								<DataItem
-									key={uuidv4()}
-									el={el}
-									who={who}
-									whoChildren={whoChildren}
-									date={date}
-								/>
-							)
-						}
-					})}
+					<div>
+						{initialDataState.map((el, i) => {
+							if (i >= 2) {
+								return (
+									<DataItem
+										key={uuidv4()}
+										el={el}
+										who={who}
+										whoChildren={whoChildren}
+										date={date}
+									/>
+								)
+							}
+						})}
+						<div className={styles.buttonWrapper}>
+							<CustomButton
+								style={{ maxWidth: '240px' }}
+								variant='backWhiteBorderBlue'
+							>
+								Прогрузить еще...
+							</CustomButton>
+						</div>
+					</div>
 				</div>
 			</div>
-			)
 		</>
 	)
 }
