@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/-travel-commerce-tsx-redux/static/css/main.ffa1e7cb.css",
-    "main.js": "/-travel-commerce-tsx-redux/static/js/main.0babfc9f.js",
+    "main.css": "/-travel-commerce-tsx-redux/static/css/main.18d244c0.css",
+    "main.js": "/-travel-commerce-tsx-redux/static/js/main.95ada23e.js",
     "static/media/maldives.png": "/-travel-commerce-tsx-redux/static/media/maldives.5c0a47d41721ee6ca99c.png",
     "static/media/sliderSlide.png": "/-travel-commerce-tsx-redux/static/media/sliderSlide.3ec6bdfe601aab799087.png",
     "static/media/ulyDalaBack.png": "/-travel-commerce-tsx-redux/static/media/ulyDalaBack.bda23a3e079eecb6e525.png",
@@ -14,11 +14,11 @@
     "static/media/slick.ttf": "/-travel-commerce-tsx-redux/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/-travel-commerce-tsx-redux/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/-travel-commerce-tsx-redux/index.html",
-    "main.ffa1e7cb.css.map": "/-travel-commerce-tsx-redux/static/css/main.ffa1e7cb.css.map",
-    "main.0babfc9f.js.map": "/-travel-commerce-tsx-redux/static/js/main.0babfc9f.js.map"
+    "main.18d244c0.css.map": "/-travel-commerce-tsx-redux/static/css/main.18d244c0.css.map",
+    "main.95ada23e.js.map": "/-travel-commerce-tsx-redux/static/js/main.95ada23e.js.map"
   },
   "entrypoints": [
-    "static/css/main.ffa1e7cb.css",
-    "static/js/main.0babfc9f.js"
+    "static/css/main.18d244c0.css",
+    "static/js/main.95ada23e.js"
   ]
 }
